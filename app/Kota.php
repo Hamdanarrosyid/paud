@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kota extends Model
 {
-    protected $table = 'Kota';
+    protected $table = 'kota';
     protected $id = 'id';
     protected $fillable = ['kota'];
 }
