@@ -16,7 +16,7 @@ class AgamaController extends Controller
     public function index()
     {
         $agama = Agama::paginate(10);
-        return view('settingmaster.kelamin',compact('agama'));
+        return view('settingmaster.agama',compact('agama'));
     }
     /**
      * Show the form for creating a new resource.
