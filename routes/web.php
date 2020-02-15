@@ -12,6 +12,8 @@
 */
 
 use Illuminate\Http\Resources\Json\Resource;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
