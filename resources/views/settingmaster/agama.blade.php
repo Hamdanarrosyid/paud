@@ -47,7 +47,7 @@
                 </button>
             </div>
         @endif
-{{$agama->links()}}
+{{$Agama->links()}}
         </ul>
         {{--Create Modal--}}
         <div class="modal fade" id="createmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -80,7 +80,7 @@
         </div>
 
         {{--Edit Modal--}}
-        @foreach($agama as $data)
+        @foreach($Agama as $data)
         <div class="modal fade" id="editmodal-{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
              aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
