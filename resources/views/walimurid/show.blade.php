@@ -2,7 +2,7 @@
 
 @section('page-title')
     <div class="d-sm-flex align-items-center  border-bottom-success justify-content-between mb-4">
-         <h1 class="h3 text-gray-800"><a href="{{route('walimurid.index')}}" class="text-gray-700 mr-4"><i class="fas fa-angle-left"></i></a>Siswa</h1>
+         <h1 class="h3 text-gray-800"><a href="{{route('walimurid.index')}}" class="text-gray-700 mr-4"><i class="fas fa-angle-left"></i></a>Wali Murid</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item font-weight-light"><a href="./">Home</a></li>
             <li class="breadcrumb-item font-weight-light" aria-current="page">Dashboard</li>
@@ -23,8 +23,6 @@
                     @endif
                     <h4 class="card-title mt-2">{{$walimurid->nama}}</h4>
                     {{--                        <h6 class="card-subtitle">Siswa paud Tunas Harapan</h6><br>--}}
-                    <h6 class="card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores,
-                        ex.</h6>
                 </div>
             </div>
         </div>
