@@ -14,9 +14,9 @@
     <div class="card col-lg-6 m-auto">
         <form action="{{route('guru.store')}}" method="post">
             @csrf
-            <div class=" row">
+            <div class=" row mb-5">
                 <!-- Form Sizing -->
-                <div class="col-lg-12 mb-5">
+                <div class="col-lg-12">
                     <div class="card-header mt-2">
                         <h6 class=" font-weight-bold text-primary mb-0" style="font-size: 20px">Guru</h6>
                     </div>
