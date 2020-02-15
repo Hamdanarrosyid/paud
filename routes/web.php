@@ -15,7 +15,7 @@ use Illuminate\Http\Resources\Json\Resource;
 
 Auth::routes();
 
-Route::get('/', 'HomeController@welcome')->name('welcome');
+//Route::get('/', 'HomeController@welcome')->name('welcome');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('kelamin','KelaminController')->middleware('auth');
