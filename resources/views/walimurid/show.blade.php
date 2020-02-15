@@ -42,9 +42,9 @@
                         <div class="form-group">
                             <label class="col-md-12">No Hp*</label>
                             <div class="col-md-12 input-group flex-nowrap">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text bg-gray-400 text-dark border-0" id="addon-wrapping">+62</span>
-                                </div>
+{{--                                <div class="input-group-prepend">--}}
+{{--                                    <span class="input-group-text bg-gray-400 text-dark border-0" id="addon-wrapping">+62</span>--}}
+{{--                                </div>--}}
                                 <input type="text"  required name="nohp" value="{{$walimurid->nohp}}" class="form-control form-control-line">
                             </div>
                         </div>
