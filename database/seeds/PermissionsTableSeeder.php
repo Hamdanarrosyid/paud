@@ -36,10 +36,10 @@ class PermissionsTableSeeder extends Seeder
             ['permission'=>'can-create','for'=>'role'],
             ['permission'=>'can-edit','for'=>'role'],
             ['permission'=>'can-delete','for'=>'role'],
-            ['permission'=>'can-view','for'=>'jadwal'],
-            ['permission'=>'can-create','for'=>'jadwal'],
-            ['permission'=>'can-edit','for'=>'jadwal'],
-            ['permission'=>'can-delete','for'=>'jadwal'],
+            ['permission'=>'can-view','for'=>'master'],
+            ['permission'=>'can-create','for'=>'master'],
+            ['permission'=>'can-edit','for'=>'master'],
+            ['permission'=>'can-delete','for'=>'master'],
         ];
         DB::table('permissions')->insert($permissions);
     }
