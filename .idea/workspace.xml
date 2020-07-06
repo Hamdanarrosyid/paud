@@ -47,19 +47,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="593c7ba0-e20d-4284-ab00-5843925b0bef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/paud-v0.1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/paud-v0.1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_24_172428_add_role_column.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_24_172428_add_role_column.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="593c7ba0-e20d-4284-ab00-5843925b0bef" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -235,7 +223,7 @@
       <workItem from="1593700720241" duration="24016000" />
       <workItem from="1593798616721" duration="21020000" />
       <workItem from="1593864786811" duration="24122000" />
-      <workItem from="1594043323470" duration="13227000" />
+      <workItem from="1594043323470" duration="13878000" />
     </task>
     <servers />
   </component>
