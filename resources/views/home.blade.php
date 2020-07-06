@@ -113,13 +113,95 @@
                     fixedStartDay: false,
                     disableEmptyDetails: true,
                     events: [
-                        
+
                     ],
 
                 });
             });
         </script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        {{--    <script src="https://code.highcharts.com/modules/data.js"></script>--}}
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        {{--    <script src="https://code.highcharts.com/modules/exporting.js"></script>--}}
+        {{--    <script src="https://code.highcharts.com/modules/export-data.js"></script>--}}
+        <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+        <script>
+            // Create the chart
+            Highcharts.chart('grafik', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'Grafik Paud Tunas Harapan'
+                },
+                accessibility: {
+                    announceNewData: {
+                        enabled: true
+                    }
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                yAxis: {
+                    title: {
+                        text: 'Total data saat ini',
+                    }
 
+                },
+                legend: {
+                    enabled: false
+                },
+                plotOptions: {
+                    series: {
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.y}'
+                        }
+                    }
+                },
+
+                tooltip: {
+                    headerFormat: null,
+                    pointFormat: '<span style="color:{point.color}">Total</span>: <b>{point.y}</b> {point.name}<br/>'
+                },
+
+                series: [
+                    {
+                        name: "Browsers",
+                        colorByPoint: true,
+                        data: [
+                            {
+                                name: "Siswa",
+                                y: {{$siswa}},
+                                drilldown: "null"
+                            },
+                            {
+                                name: "Guru",
+                                y: {{$guru}},
+                                drilldown: "null"
+
+                            },
+                            {
+                                name: "Wali Murid",
+                                y: {{$walimurid}},
+                                drilldown: "null"
+                            },
+                            {
+                                name: "Sarana",
+                                y: {{$sarana}},
+                                drilldown: "null"
+                            },
+                            {
+                                name: "Prasarana",
+                                y: {{$prasarana}},
+                                drilldown: "null"
+                            },
+                        ]
+                    }
+                ]
+            });
+        </script>
 
 
 

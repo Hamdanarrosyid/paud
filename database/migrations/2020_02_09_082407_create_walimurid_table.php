@@ -16,7 +16,7 @@ class CreateWalimuridTable extends Migration
         Schema::create('walimurid', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
-            $table->bigInteger('nohp');
+            $table->string('nohp',15);
             $table->unsignedBigInteger('gender_id');
             $table->unsignedBigInteger('agama_id');
             $table->unsignedBigInteger('pekerjaan_id');

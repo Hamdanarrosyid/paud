@@ -6,16 +6,25 @@ use App\Agama;
 use App\Guru;
 use App\Kelamin;
 use App\Kota;
+use App\Permissions;
+use App\Role;
+use App\User;
 use Exception;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 class GuruController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Guru::class,'guru');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,10 +43,11 @@ class GuruController extends Controller
      */
     public function create()
     {
-        $kota = Kota::all();
-        $kelamin = Kelamin::all();
-        $agama = Agama::all();
-        return view('guru.create', ['kota' => $kota, 'kelamin' => $kelamin, 'agama' => $agama]);
+            $kota = Kota::all();
+            $kelamin = Kelamin::all();
+            $agama = Agama::all();
+            return view('guru.create', ['kota' => $kota, 'kelamin' => $kelamin, 'agama' => $agama]);
+
     }
 
     /**

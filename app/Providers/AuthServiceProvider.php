@@ -2,6 +2,12 @@
 
 namespace App\Providers;
 
+use App\Guru;
+use App\Policies\AdminPolicy;
+use App\Policies\GuruPolicy;
+use App\Policies\WalimuridPolicy;
+use App\User;
+use App\Walimurid;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -13,8 +19,9 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // 'App\Model' => 'App\Policies\ModelPolicy',
+        'App' => 'App\Policies\ModelPolicy',
     ];
+
 
     /**
      * Register any authentication / authorization services.
@@ -25,6 +32,11 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('admin', 'App\Policies\AdminPolicy@admin');
+        Gate::resource('user', 'App\Policies\UsersPolicy');
+        Gate::resource('guru', 'App\Policies\GuruPolicy');
+        Gate::resource('role', 'App\Policies\RolePolicy');
+//        Gate::resource('admin', 'App\Policies\AdminPolicy@Admin');
+//        Gate:define('user','App\Policies\GuruPolicy@viewAny');
     }
 }

@@ -8,6 +8,7 @@ use App\Kota;
 use App\Pekerjaan;
 use App\Siswa;
 use App\Walimurid;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 
@@ -18,8 +19,11 @@ class SiswaController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+//    protected $siswa;
+
+    public function index(Siswa $siswa)
     {
+//        $this->siswa = $siswa;
         $siswa = Siswa::all();
         return view('siswa.index',['siswa'=>$siswa]);
     }
@@ -184,4 +188,17 @@ class SiswaController extends Controller
         }
         return redirect()->route('siswa.index')->with('status', 'Berhasil menghapus data');
     }
+
+    public function exportpdf()
+    {
+        $siswa = Siswa::all();
+        $pdf = \PDF::loadView('html',['siswa'=>$siswa]);
+        return $pdf->download('tes.pdf');
+    }
+    public function tes()
+    {
+        $siswa = Siswa::all();
+        return view('html',['siswa'=>$siswa]);
+    }
+
 }

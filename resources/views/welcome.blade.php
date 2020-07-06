@@ -211,7 +211,7 @@
 <div class="modal fade" id="registerModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <form method="POST" action="{{ route('register') }}" class="modal-content">
+        <form method="POST" action="{{ route('register.post') }}" class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalCenterTitle">Registrasi</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -277,6 +277,7 @@
                     </div>
                 </div>
             </div>
+            <input name="role" type="hidden">
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">{{ __('Register') }}</button>
             </div>

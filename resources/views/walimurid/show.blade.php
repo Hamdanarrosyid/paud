@@ -53,11 +53,7 @@
                             <div class="col-sm-12">
                                 <select name="gender" class="form-control">
                                     @foreach($kelamin as $data)
-                                        @if($data->jeniskelamin== $walimurid->gender->jeniskelamin)
-                                            <option selected value="{{$walimurid->gender->id}}">{{$walimurid->gender->jeniskelamin}}</option>
-                                        @else
-                                        <option value="{{$data->id}}">{{$data->jeniskelamin}}</option>
-                                        @endif
+                                            <option @if($data->jeniskelamin == $walimurid->gender->jeniskelamin) selected @endif value="{{$data->id}}">{{$data->jeniskelamin}}</option>
                                     @endforeach
                                 </select>
                             </div>

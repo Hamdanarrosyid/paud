@@ -10,7 +10,8 @@
 }
 .navbar-brand{
     font-family: 'Poppins', sans-serif;
-    font-size: 28px;
+    font-size: 22px;
+    padding-right: 0;
     font-weight: 400;
 }
 
