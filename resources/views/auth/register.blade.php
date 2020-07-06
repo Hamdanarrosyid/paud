@@ -13,7 +13,7 @@
 @endsection
 @section('content')
     <div class="card col-lg-6 m-auto">
-        <form action="{{route('register.post')}}" method="post">
+        <form action="{{route('registerme')}}" method="post">
             @csrf
             <div class="row">
                 <!-- Form Sizing -->

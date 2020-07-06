@@ -33,14 +33,14 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        $this->authorize('user.create',User::class);
+        $this->authorize('user.create', User::class);
         $roles = Role::all();
         return view('auth.register', ['roles' => $roles]);
     }
 
     public function index()
     {
-        $this->authorize('user.viewAny',User::class);
+        $this->authorize('user.viewAny', User::class);
         $users = User::all();
         return view('users.index', ['users' => $users]);
     }
@@ -53,12 +53,11 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        $this->authorize('user.create',User::class);
+//        $this->authorize('user.create', User::class);
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-//            'role' => ['integer'],
         ]);
     }
 
@@ -66,60 +65,81 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param array $data
-     * @return \App\User
+     * @return \Illuminate\Http\RedirectResponse
      */
+    public function store(Request $request)
+    {
+        $this->authorize('user.create', User::class);
+        $this->validate($request, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required', 'integer'],
+        ]);
+        $create = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role_id' => $request->role,
+        ]);
+        event(new Registered($create));
+        $role_id = $request->role;
+        if ($role_id !== null) {
+            $user = User::find($create->id);
+            $user->role()->attach($request->role);
+            return redirect()->route('user')->with('status', 'Berhasil menambah data');
+        } else {
+            return back();
+        }
+    }
+
     protected function create(array $data)
     {
-        $this->authorize('user.create',User::class);
+//        $this->authorize('user.create', User::class);
         $create = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role_id' =>$data['role'],
+            'role_id' => $data['role'],
         ]);
-        $role_id = $data['role'];
-        if ($role_id !== null) {
-            $user = User::find($create->id);
-            return $user->role()->attach($data['role']);
-        } else {
-            return $create;
-        }
+        return $create;
     }
 
     public function register(Request $request)
     {
+//        $this->authorize('user.create', User::class);
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
-        if ($request->role === null) {
             $this->guard()->login($user);
-        }
 
-        return redirect()->route('user')->with('status','Berhasil menambah data');
+        return redirect()->route('home');
     }
 
     public function show(User $user)
     {
-        $this->authorize('user.update',User::class);
+        $this->authorize('user.update', User::class);
 //        dd($user->role->id);
         $roles = Role::all();
-        return view('users.show',['user'=>$user,'roles'=>$roles]);
+        return view('users.show', ['user' => $user, 'roles' => $roles]);
     }
-    public function update(Request $request,User $user)
+
+    public function update(Request $request, User $user)
     {
-        $this->authorize('user.update',User::class);
-        User::where('id',$user->id)
+        $this->authorize('user.update', User::class);
+        User::where('id', $user->id)
             ->update([
-                'name'=>$request->name,
-                'role_id'=>$request->role
+                'name' => $request->name,
+                'role_id' => $request->role
             ]);
         $user_id = User::find($user->id);
         $user_id->role()->sync([$request->role]);
-        return redirect()->route('user')->with('status','Berhasil mengubah data');
+        return redirect()->route('user')->with('status', 'Berhasil mengubah data');
     }
+
     public function destroy(User $user)
     {
-        $this->authorize('user.delete',User::class);
+        $this->authorize('user.delete', User::class);
         $user_id = User::find($user->id);
         $user_id->role()->detach($user->role_id);
 //        dd($user->role);

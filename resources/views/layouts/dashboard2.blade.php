@@ -35,7 +35,7 @@
         <div class="sidebar-heading">
             Features
         </div>
-        @can('user.viewAny')
+        @canany(['user.viewAny','role.viewAny'])
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage1"
                    aria-expanded="true"
@@ -46,62 +46,66 @@
                 <div id="collapsePage1" class="collapse" aria-labelledby="headingPage"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner">
-{{--                        <h6 class="collapse-header">Sarpras</h6>--}}
-                        <a class="collapse-item" href="{{route('user')}}"><i class="fas fa-fw fa-user text-dark mr-2"></i><span>Users</span></a>
+                        {{--                        <h6 class="collapse-header">Sarpras</h6>--}}
+                        @can('user.viewAny')
+                            <a class="collapse-item" href="{{route('user')}}"><i
+                                    class="fas fa-fw fa-user text-dark mr-2"></i><span>Users</span></a>
+                        @endcan
                         @can('role.viewAny')
-                        <a class="collapse-item" href="{{route('role.index')}}"><i class="fas fa-fw fa-cog text-dark mr-2"></i><span>Role</span></a>
+                            <a class="collapse-item" href="{{route('role.index')}}"><i
+                                    class="fas fa-fw fa-cog text-dark mr-2"></i><span>Role</span></a>
                         @endcan
                     </div>
                 </div>
             </li>
-        @endcan
+        @endcanany
         @can('siswa.viewAny')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('siswa.index')}}">
-                        <i class="fas fa-fw fa-child"></i>
-                        <span>Siswa</span>
-                    </a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('siswa.index')}}">
+                    <i class="fas fa-fw fa-child"></i>
+                    <span>Siswa</span>
+                </a>
+            </li>
         @endcan
         @can('guru.viewAny')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('guru.index')}}">
-                        <i class="fas fa-fw fa-chalkboard-teacher"></i>
-                        <span>Guru</span>
-                    </a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('guru.index')}}">
+                    <i class="fas fa-fw fa-chalkboard-teacher"></i>
+                    <span>Guru</span>
+                </a>
+            </li>
         @endcan
         @can('walimurid.viewAny')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('walimurid.index')}}">
-                        <i class="fas fa-fw fa-user-shield"></i>
-                        <span>Orang tua/Wali murid</span>
-                    </a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('walimurid.index')}}">
+                    <i class="fas fa-fw fa-user-shield"></i>
+                    <span>Orang tua/Wali murid</span>
+                </a>
+            </li>
         @endcan
         @can('sarpras.viewAny')
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage"
-                       aria-expanded="true"
-                       aria-controls="collapsePage">
-                        <i class="fas fa-fw fa-columns"></i>
-                        <span>Sarpras</span>
-                    </a>
-                    <div id="collapsePage" class="collapse" aria-labelledby="headingPage"
-                         data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Sarpras</h6>
-                            <a class="collapse-item" href="{{route('sarana.index')}}">Sarana</a>
-                            <a class="collapse-item" href="{{route('prasarana.index')}}">Prasarana</a>
-                        </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage"
+                   aria-expanded="true"
+                   aria-controls="collapsePage">
+                    <i class="fas fa-fw fa-columns"></i>
+                    <span>Sarpras</span>
+                </a>
+                <div id="collapsePage" class="collapse" aria-labelledby="headingPage"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Sarpras</h6>
+                        <a class="collapse-item" href="{{route('sarana.index')}}">Sarana</a>
+                        <a class="collapse-item" href="{{route('prasarana.index')}}">Prasarana</a>
                     </div>
-                </li>
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link" href="{{route('jadwal.index')}}">--}}
-{{--                    <i class="fas fa-fw fa-calendar-day"></i>--}}
-{{--                    <span>Jadwal</span>--}}
-{{--                </a>--}}
-{{--            </li>--}}
+                </div>
+            </li>
+            {{--            <li class="nav-item">--}}
+            {{--                <a class="nav-link" href="{{route('jadwal.index')}}">--}}
+            {{--                    <i class="fas fa-fw fa-calendar-day"></i>--}}
+            {{--                    <span>Jadwal</span>--}}
+            {{--                </a>--}}
+            {{--            </li>--}}
         @endcan
         <hr class="sidebar-divider">
         <div class="version">Paud Version 0.1</div>
@@ -153,24 +157,24 @@
                         </a>
                     </li>
                     @can('admin')
-                    <li class="nav-item dropdown  no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                           data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-cogs"></i><span class="ml-1">Master</span>
-                        </a>
-                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                             aria-labelledby="messagesDropdown">
-                            <h6 class="dropdown-header">
-                                Setting Master
-                            </h6>
-                            <a class="dropdown-item" href="{{route('kelamin.index')}}">Gender</a>
-                            <a class="dropdown-item" href="{{route('agama.index')}}">Agama</a>
-                            <a class="dropdown-item" href="{{route('kota.index')}}">Kab/Kota</a>
-                            <a class="dropdown-item" href="{{route('pendidikan.index')}}">Pendidikan</a>
-                            <a class="dropdown-item" href="{{route('pekerjaan.index')}}">Pekerjaan</a>
-                        </div>
-                    </li>
+                        <li class="nav-item dropdown  no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-cogs"></i><span class="ml-1">Master</span>
+                            </a>
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                 aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Setting Master
+                                </h6>
+                                <a class="dropdown-item" href="{{route('kelamin.index')}}">Gender</a>
+                                <a class="dropdown-item" href="{{route('agama.index')}}">Agama</a>
+                                <a class="dropdown-item" href="{{route('kota.index')}}">Kab/Kota</a>
+                                <a class="dropdown-item" href="{{route('pendidikan.index')}}">Pendidikan</a>
+                                <a class="dropdown-item" href="{{route('pekerjaan.index')}}">Pekerjaan</a>
+                            </div>
+                        </li>
                     @endcan
                     <div class="topbar-divider d-none d-sm-block"></div>
                     <li class="nav-item dropdown no-arrow">
@@ -187,9 +191,8 @@
                                 Profile
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal"
+                               href="#">
                                 <i class="fas fa-sign-out-alt fa-fw mr-2 text-gray-400"></i>
                                 {{ __('Logout') }}
                             </a>
@@ -228,6 +231,31 @@
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
+
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Log out</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Yakin Untuk Keluar?</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-danger" data-toggle="modal" data-target="#logoutModal" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    @csrf
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
