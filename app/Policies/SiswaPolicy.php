@@ -18,7 +18,7 @@ class SiswaPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $this->getpermission($user,5);
     }
 
     /**
@@ -28,9 +28,9 @@ class SiswaPolicy
      * @param  \App\Siswa  $siswa
      * @return mixed
      */
-    public function view(User $user, Siswa $siswa)
+    public function view(User $user)
     {
-        //
+        return $this->getpermission($user,5);
     }
 
     /**
@@ -41,7 +41,7 @@ class SiswaPolicy
      */
     public function create(User $user)
     {
-        //
+        return $this->getpermission($user,6);
     }
 
     /**
@@ -51,9 +51,9 @@ class SiswaPolicy
      * @param  \App\Siswa  $siswa
      * @return mixed
      */
-    public function update(User $user, Siswa $siswa)
+    public function update(User $user)
     {
-        //
+        return $this->getpermission($user,7);
     }
 
     /**
@@ -63,9 +63,9 @@ class SiswaPolicy
      * @param  \App\Siswa  $siswa
      * @return mixed
      */
-    public function delete(User $user, Siswa $siswa)
+    public function delete(User $user)
     {
-        //
+        return $this->getpermission($user,8);
     }
 
     /**
@@ -90,5 +90,16 @@ class SiswaPolicy
     public function forceDelete(User $user, Siswa $siswa)
     {
         //
+    }
+
+    public function getpermission($data,$permission_id)
+    {
+        foreach ($data->role as $roles){
+            foreach ($roles->permissions as $permission){
+                if ($permission->id === $permission_id){
+                    return true;
+                }
+            }
+        }
     }
 }

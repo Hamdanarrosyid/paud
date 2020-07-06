@@ -16,6 +16,7 @@ class PrasaranaController extends Controller
      */
     public function index()
     {
+        $this->authorize('sarpras.viewAny');
         $prasarana = Prasarana::all();
         return view('prasarana.index',['prasarana'=>$prasarana]);
     }
@@ -38,6 +39,7 @@ class PrasaranaController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('sarpras.create');
         try {
             $this->validate($request,[
                 'namaruang'=>'required|string|max:255',
@@ -88,6 +90,7 @@ class PrasaranaController extends Controller
      */
     public function update(Request $request, Prasarana $prasarana)
     {
+        $this->authorize('sarpras.update');
         try {
             $this->validate($request,[
                 'namaruang'=>'required|string|max:255',
@@ -116,6 +119,7 @@ class PrasaranaController extends Controller
      */
     public function destroy(Prasarana $prasarana)
     {
+        $this->authorize('sarpras.delete');
         try {
             $prasarana::where('id', $prasarana->id);
             $prasarana->delete();

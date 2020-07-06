@@ -14,6 +14,10 @@ use Mockery\Exception;
 
 class SiswaController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Siswa::class,'siswa');
+    }
     /**
      * Display a listing of the resource.
      *

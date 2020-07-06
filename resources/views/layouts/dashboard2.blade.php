@@ -48,30 +48,38 @@
                     <div class="bg-white py-2 collapse-inner">
 {{--                        <h6 class="collapse-header">Sarpras</h6>--}}
                         <a class="collapse-item" href="{{route('user')}}"><i class="fas fa-fw fa-user text-dark mr-2"></i><span>Users</span></a>
+                        @can('role.viewAny')
                         <a class="collapse-item" href="{{route('role.index')}}"><i class="fas fa-fw fa-cog text-dark mr-2"></i><span>Role</span></a>
+                        @endcan
                     </div>
                 </div>
             </li>
         @endcan
-        @canany( ['user.viewAny','guru.viewAny'])
+        @can('siswa.viewAny')
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('siswa.index')}}">
                         <i class="fas fa-fw fa-child"></i>
                         <span>Siswa</span>
                     </a>
                 </li>
+        @endcan
+        @can('guru.viewAny')
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('guru.index')}}">
                         <i class="fas fa-fw fa-chalkboard-teacher"></i>
                         <span>Guru</span>
                     </a>
                 </li>
+        @endcan
+        @can('walimurid.viewAny')
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('walimurid.index')}}">
                         <i class="fas fa-fw fa-user-shield"></i>
                         <span>Orang tua/Wali murid</span>
                     </a>
                 </li>
+        @endcan
+        @can('sarpras.viewAny')
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage"
                        aria-expanded="true"
@@ -88,13 +96,13 @@
                         </div>
                     </div>
                 </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('jadwal.index')}}">
-                    <i class="fas fa-fw fa-calendar-day"></i>
-                    <span>Jadwal</span>
-                </a>
-            </li>
-        @endcanany
+{{--            <li class="nav-item">--}}
+{{--                <a class="nav-link" href="{{route('jadwal.index')}}">--}}
+{{--                    <i class="fas fa-fw fa-calendar-day"></i>--}}
+{{--                    <span>Jadwal</span>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+        @endcan
         <hr class="sidebar-divider">
         <div class="version">Paud Version 0.1</div>
     </ul>
@@ -144,7 +152,7 @@
                             <i class="fas fa-envelope fa-fw"></i>
                         </a>
                     </li>
-                    @can('admin',Auth::user())
+                    @can('admin')
                     <li class="nav-item dropdown  no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                            data-toggle="dropdown"

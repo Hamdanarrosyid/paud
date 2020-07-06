@@ -3,13 +3,17 @@
 namespace App\Policies;
 
 use App\User;
-use App\Walimurid;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class WalimuridPolicy
+class SarprasPolicy
 {
     use HandlesAuthorization;
 
+    /**
+     * Create a new policy instance.
+     *
+     * @return void
+     */
     /**
      * Determine whether the user can view any gurus.
      *
@@ -20,7 +24,7 @@ class WalimuridPolicy
 
     public function viewAny(User $user)
     {
-        return $this->getpermission($user,9);
+        return $this->getpermission($user,17);
     }
 
     /**
@@ -32,7 +36,7 @@ class WalimuridPolicy
      */
     public function view(User $user)
     {
-        return $this->getpermission($user,9);
+        return $this->getpermission($user,17);
     }
 
     /**
@@ -43,7 +47,7 @@ class WalimuridPolicy
      */
     public function create(User $user)
     {
-        return $this->getpermission($user,10);
+        return $this->getpermission($user,18);
     }
 
     /**
@@ -55,7 +59,7 @@ class WalimuridPolicy
      */
     public function update(User $user)
     {
-        return $this->getpermission($user,11);
+        return $this->getpermission($user,19);
     }
 
     /**
@@ -67,7 +71,7 @@ class WalimuridPolicy
      */
     public function delete(User $user)
     {
-        return $this->getpermission($user,12);
+        return $this->getpermission($user,20);
     }
 
     /**

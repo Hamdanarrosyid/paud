@@ -11,6 +11,11 @@ use Exception;
 
 class WalimuridController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Walimurid::class,'walimurid');
+    }
+
     /**
      * Display a listing of the resource.
      *

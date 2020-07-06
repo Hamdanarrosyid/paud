@@ -16,14 +16,18 @@
     <ul class="list-group m-auto col-lg-10">
         <li class="list-group-item d-flex justify-content-between mb-2" aria-disabled="true">
             <span class="text-gray-900">Role</span>
+            @can('role.create')
             <a class="text-dark" href="{{route('role.create')}}">
                 <i class="fas fa-plus"></i>
                 Tambah Data</a>
+            @endcan
         </li>
         @foreach($roles as $data)
             <li class="list-group-item d-flex justify-content-between"><span class="mt-2 text-capitalize">{{$data->role}}</span>
                 <div>
+                    @can('role.update')
                     <a href="{{route('role.show',['role'=>$data->id])}}" type="button"class="badge badge-primary font-weight-light">lihat Permission</a>
+                    @endcan
                 </div>
             </li>
         @endforeach

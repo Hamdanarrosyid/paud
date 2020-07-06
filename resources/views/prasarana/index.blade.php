@@ -16,8 +16,12 @@
         <div class="card mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
-                <h6 class="m-0 font-weight-bold text-primary"><a href="#" data-toggle="modal" data-target="#createmodal"><i class="fas fa-plus"></i>
-                        Tambah Data</a></h6>
+                @can('sarpras.create')
+                    <h6 class="m-0 font-weight-bold text-primary"><a href="#" data-toggle="modal"
+                                                                     data-target="#createmodal"><i
+                                class="fas fa-plus"></i>
+                            Tambah Data</a></h6>
+                @endcan
             </div>
             <div class="table-responsive p-3">
                 <table class="table align-items-center table-flush table-hover" id="dataTable">
@@ -28,7 +32,9 @@
                         <th>Jumlah(unit)</th>
                         <th>panjang(m)</th>
                         <th>lebar(m)</th>
-                        <th>Action</th>
+                        @canany(['sarpras.update','sarpras.delete'])
+                            <th>Action</th>
+                        @endcan
                     </tr>
                     </thead>
                     <tbody>
@@ -39,12 +45,18 @@
                             <td>{{$data->jumlah}} unit</td>
                             <td>{{$data->panjang}} m</td>
                             <td>{{$data->lebar}} m</td>
-                            <td>
-                                <a href="#" data-toggle="modal" data-target="#editmodal-{{$data->id}}"
-                                   class="badge badge-primary font-weight-light">Edit</a>
-                                <a href="#" data-toggle="modal" data-target="#hapusmodal-{{$data->id}}"
-                                   class="badge badge-danger font-weight-light">Delete</a>
-                            </td>
+                            @canany(['sarpras.update','sarpras.delete'])
+                                <td>
+                                    @can('sarpras.update')
+                                        <a href="#" data-toggle="modal" data-target="#editmodal-{{$data->id}}"
+                                           class="badge badge-primary font-weight-light">Edit</a>
+                                    @endcan
+                                    @can('sarpras.delete')
+                                        <a href="#" data-toggle="modal" data-target="#hapusmodal-{{$data->id}}"
+                                           class="badge badge-danger font-weight-light">Delete</a>
+                                    @endcan
+                                </td>
+                            @endcan
                         </tr>
                     @endforeach
                     </tbody>
@@ -84,24 +96,30 @@
                         @method('POST')
                         <div class="input-group mb-3">
                             <label for="namaruang" class="col-sm-4 col-form-label">Nama ruang</label>
-                                <input type="text" required name="namaruang" placeholder="Masukan nama ruang" class="form-control" id="namaruang">
+                            <input type="text" required name="namaruang" placeholder="Masukan nama ruang"
+                                   class="form-control" id="namaruang">
                         </div>
                         <div class="input-group mb-3">
                             <label for="jumlah" class="col-sm-4 col-form-label">Jumlah</label>
-                                <input type="number" required value="0" name="jumlah" class="form-control" id="jumlah" aria-describedby="basic-addon2">
+                            <input type="number" required value="0" name="jumlah" class="form-control" id="jumlah"
+                                   aria-describedby="basic-addon2">
                         </div>
                         <div class="input-group mb-3">
                             <label for="panjang" class="col-sm-4 col-form-label">panjang</label>
-                            <input type="number"step="any" required name="panjang" class="form-control" value="0"  aria-describedby="basic-addon2">
+                            <input type="number" step="any" required name="panjang" class="form-control" value="0"
+                                   aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <span class="input-group-text bg-gray-400 border-0 text-dark" id="basic-addon2">meter</span>
+                                <span class="input-group-text bg-gray-400 border-0 text-dark"
+                                      id="basic-addon2">meter</span>
                             </div>
                         </div>
                         <div class="input-group mb-3">
                             <label for="lebar" class="col-sm-4 col-form-label">lebar</label>
-                            <input type="number" step="any" required name="lebar" class="form-control" value="0"  aria-describedby="basic-addon2">
+                            <input type="number" step="any" required name="lebar" class="form-control" value="0"
+                                   aria-describedby="basic-addon2">
                             <div class=" input-group-append">
-                                <span class="bg-gray-400 border-0 text-dark input-group-text" id="basic-addon2">meter</span>
+                                <span class="bg-gray-400 border-0 text-dark input-group-text"
+                                      id="basic-addon2">meter</span>
                             </div>
                         </div>
                 </div>
@@ -131,22 +149,26 @@
                             @method('PATCH')
                             <div class="input-group mb-3">
                                 <label for="namaruang" class="col-sm-4 col-form-label">Nama ruang</label>
-                                <input type="text" value="{{$data->namaruang}}" required name="namaruang" placeholder="Masukan nama ruang" class="form-control" id="namaruang">
+                                <input type="text" value="{{$data->namaruang}}" required name="namaruang"
+                                       placeholder="Masukan nama ruang" class="form-control" id="namaruang">
                             </div>
                             <div class="input-group mb-3">
                                 <label for="jumlah" class="col-sm-4 col-form-label">Jumlah</label>
-                                <input type="number" value="{{$data->jumlah}}" required name="jumlah" class="form-control" id="jumlah" aria-describedby="basic-addon2">
+                                <input type="number" value="{{$data->jumlah}}" required name="jumlah"
+                                       class="form-control" id="jumlah" aria-describedby="basic-addon2">
                             </div>
                             <div class="input-group mb-3">
                                 <label for="panjang" class="col-sm-4 col-form-label">panjang</label>
-                                <input type="number" step="any" name="panjang" class="form-control" value="{{$data->panjang}}" required  aria-describedby="basic-addon2">
+                                <input type="number" step="any" name="panjang" class="form-control"
+                                       value="{{$data->panjang}}" required aria-describedby="basic-addon2">
                                 <div class="input-group-append">
                                     <span class="input-group-text bg-gray-400 border-0 text-dark" id="basic-addon2">meter</span>
                                 </div>
                             </div>
                             <div class="input-group mb-3">
                                 <label for="lebar" class="col-sm-4 col-form-label">lebar</label>
-                                <input type="number" step="any" name="lebar" class="form-control" value="{{$data->lebar}}" required  aria-describedby="basic-addon2">
+                                <input type="number" step="any" name="lebar" class="form-control"
+                                       value="{{$data->lebar}}" required aria-describedby="basic-addon2">
                                 <div class=" input-group-append">
                                     <span class="bg-gray-400 border-0 text-dark input-group-text" id="basic-addon2">meter</span>
                                 </div>

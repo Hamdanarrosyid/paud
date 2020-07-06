@@ -17,8 +17,10 @@
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
                     <h6 class="m-0 font-weight-bold text-primary"><a href="{{route('exportpdf')}}">Download PDF</a></h6>
-                    <h6 class="m-0 font-weight-bold text-primary"><a href="{{route('siswa.create')}}"><i
+                @can('siswa.create')
+                <h6 class="m-0 font-weight-bold text-primary"><a href="{{route('siswa.create')}}"><i
                                 class="fas fa-plus"></i> Tambah Data</a></h6>
+                @endcan
             </div>
             <div class="table-responsive p-3">
                 <table class="table align-items-center table-flush table-hover" id="dataTable">

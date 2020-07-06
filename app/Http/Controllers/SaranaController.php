@@ -9,6 +9,11 @@ use Illuminate\Validation\ValidationException;
 
 class SaranaController extends Controller
 {
+//    public function __construct()
+//    {
+//        $this->authorizeResource(Sarana::class,'sarpras');
+//    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +21,7 @@ class SaranaController extends Controller
      */
     public function index()
     {
+        $this->authorize('sarpras.viewAny');
         $sarana = Sarana::all();
         return view('sarana.index',['sarana'=>$sarana]);
     }
@@ -38,6 +44,7 @@ class SaranaController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('sarpras.create');
         $kondisibaik=$request->kondisibaik;
         $kondisirusak=$request->kondisirusak;
         try {
@@ -96,6 +103,7 @@ class SaranaController extends Controller
      */
     public function update(Request $request, Sarana $sarana)
     {
+        $this->authorize('sarpras.update');
             $kondisibaik=$request->kondisibaik;
             $kondisirusak=$request->kondisirusak;
             try {
@@ -132,6 +140,7 @@ class SaranaController extends Controller
      */
     public function destroy(Sarana $sarana)
     {
+        $this->authorize('sarpras.delete');
         try {
             $sarana::where('id', $sarana->id);
             $sarana->delete();

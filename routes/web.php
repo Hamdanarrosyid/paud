@@ -21,11 +21,11 @@ Route::get('/', 'HomeController@welcome')->name('welcome');
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 //});
 
-Route::resource('kelamin','KelaminController')->middleware(['auth','can:admin.viewAny']);
-Route::resource('kota','KotaController')->middleware(['auth','can:admin.viewAny']);
-Route::resource('agama','AgamaController')->middleware(['auth','can:admin.viewAny']);
-Route::resource('pendidikan','PendidikanController')->middleware(['auth','can:admin.viewAny']);
-Route::resource('pekerjaan','PekerjaanController')->middleware(['auth','can:admin.viewAny']);
+Route::resource('kelamin','KelaminController')->middleware(['auth']);
+Route::resource('kota','KotaController')->middleware(['auth']);
+Route::resource('agama','AgamaController')->middleware(['auth']);
+Route::resource('pendidikan','PendidikanController')->middleware(['auth']);
+Route::resource('pekerjaan','PekerjaanController')->middleware(['auth']);
 Route::resource('role','RoleController')->middleware('auth');
 
 Route::resource('siswa','SiswaController')->middleware(['auth']);
@@ -36,5 +36,5 @@ Route::resource('walimurid','WalimuridController')->middleware(['auth']);
 Route::resource('guru','GuruController')->middleware(['auth']);
 Route::resource('jadwal','JadwalController')->only('store','index','update','destroy')->middleware(['auth']);
 Route::get('jadwal/fetch','JadwalController@fetch')->name('jadwal.fetch')->middleware(['auth']);
-Route::resource('sarana','SaranaController')->middleware(['auth','can:admin']);
-Route::resource('prasarana','PrasaranaController')->middleware(['auth','can:admin']);
+Route::resource('sarana','SaranaController')->middleware(['auth']);
+Route::resource('prasarana','PrasaranaController')->middleware(['auth']);

@@ -100,18 +100,24 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
+                                @can('siswa.update')
                                 <button type="submit" class="btn btn-success">Update Profile</button>
+                                @endcan
+                                @can('siswa.delete')
                                 <a href="{{route('siswa.destroy',['siswa'=>$siswa->id])}}"
                                    onclick="event.preventDefault();document.getElementById('deleteform').submit();"
                                    class="btn btn-danger">Delete Profile</a>
+                                @endcan
                             </div>
                         </div>
                     </form>
+                    @can('siswa.delete')
                     <form id="deleteform" method="POST" action="{{route('siswa.destroy',['siswa'=>$siswa->id])}}">
                         @csrf
                         @method('DELETE')
 {{--                        <button type="submit" class="btn btn-danger ">Delete Profile</button>--}}
                     </form>
+                    @endcan
                 </div>
             </div>
         </div>

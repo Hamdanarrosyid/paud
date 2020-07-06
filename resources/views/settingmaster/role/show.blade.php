@@ -114,10 +114,10 @@
                                 @endforeach
                             </div>
                             <div class="col-lg-4">
-                                <label for="User" class="col-form-label">Data Jadwal Permission:</label>
+                                <label for="User" class="col-form-label">Data Role Permission:</label>
                                 @foreach($permissions as $permission)
                                     <div class="form-check col">
-                                        @if($permission->for == 'jadwal')
+                                        @if($permission->for == 'role')
                                             <input class="form-check-input" type="checkbox"
                                                    @foreach($role->permissions as $check)
                                                    @if($check->id == $permission->id)
@@ -154,6 +154,7 @@
                                 @endforeach
                             </div>
                         </div>
+
 
 
                         <div class="d-flex flex-row justify-content-end">

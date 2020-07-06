@@ -105,18 +105,24 @@
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
+                                @can('guru.update')
                                 <button type="submit" class="btn btn-success">Update Profile</button>
+                                @endcan
+                                @can('guru.delete')
                                 <a href="{{route('guru.destroy',['guru'=>$guru->id])}}"
                                    onclick="event.preventDefault();document.getElementById('deleteform').submit();"
                                    class="btn btn-danger">Delete Profile</a>
+                                @endcan
                             </div>
                         </div>
                     </form>
+                    @can('siswa.delete')
                     <form id="deleteform" method="POST" action="{{route('guru.destroy',['guru'=>$guru->id])}}">
                         @csrf
                         @method('DELETE')
 {{--                        <button type="submit" class="btn btn-danger ">Delete Profile</button>--}}
                     </form>
+                    @endcan
                 </div>
             </div>
         </div>

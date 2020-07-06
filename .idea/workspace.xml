@@ -49,26 +49,28 @@
   <component name="ChangeListManager">
     <list default="true" id="593c7ba0-e20d-4284-ab00-5843925b0bef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GuruController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GuruController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PekerjaanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PekerjaanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PrasaranaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PrasaranaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SaranaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SaranaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiswaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WalimuridController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WalimuridController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/RolePolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/RolePolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/SiswaPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/SiswaPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/WalimuridPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/WalimuridPolicy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_09_082407_create_walimurid_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_09_082407_create_walimurid_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/landing.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/landing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/guru/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PermissionsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PermissionsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guru/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guru/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/prasarana/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/prasarana/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sarana/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sarana/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/role/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/role/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/role/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/role/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/siswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/siswa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/siswa/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/siswa/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/walimurid/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/walimurid/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -246,6 +248,7 @@
       <workItem from="1593700720241" duration="24016000" />
       <workItem from="1593798616721" duration="21020000" />
       <workItem from="1593864786811" duration="24122000" />
+      <workItem from="1594043323470" duration="4840000" />
     </task>
     <servers />
   </component>
@@ -285,9 +288,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1593896940236" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1593907373119">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1594046060040">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1593907373119" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1594046060040" />
   </component>
 </project>

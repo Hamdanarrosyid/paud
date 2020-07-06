@@ -18,7 +18,7 @@ class RolePolicy
      */
     public function viewAny(User $user)
     {
-        return $this->getpermission($user,13);
+        return $this->getpermission($user,21);
     }
 
     /**
@@ -28,9 +28,9 @@ class RolePolicy
      * @param  \App\Role  $role
      * @return mixed
      */
-    public function view(User $user, Role $role)
+    public function view(User $user)
     {
-        return $this->getpermission($user,13);
+        return $this->getpermission($user,21);
     }
 
     /**
@@ -41,7 +41,7 @@ class RolePolicy
      */
     public function create(User $user)
     {
-        return $this->getpermission($user,14);
+        return $this->getpermission($user,22);
     }
 
     /**
@@ -51,9 +51,9 @@ class RolePolicy
      * @param  \App\Role  $role
      * @return mixed
      */
-    public function update(User $user, Role $role)
+    public function update(User $user)
     {
-        return $this->getpermission($user,15);
+        return $this->getpermission($user,23);
     }
 
     /**
@@ -63,9 +63,9 @@ class RolePolicy
      * @param  \App\Role  $role
      * @return mixed
      */
-    public function delete(User $user, Role $role)
+    public function delete(User $user)
     {
-        return $this->getpermission($user,16);
+        return $this->getpermission($user,24);
     }
 
     /**

@@ -69,7 +69,7 @@
                         {{--                                    </span>--}}
                         {{--                            @enderror--}}
                         {{--                        </div>--}}
-{{--                        {{dd($user->role->id)}}--}}
+                        {{--                        {{dd($user->role->id)}}--}}
                         <div class="form-group">
                             <label>Role*</label>
                             <select name="role" class="form-control @error('role') is-invalid @enderror">
@@ -88,20 +88,26 @@
                             @enderror
                         </div>
                         <div class="d-flex flex-row justify-content-between">
-                            <button type="submit" class="btn btn-success">Submit</button>
-                            <a href="#"
-                            onclick="event.preventDefault();document.getElementById('deleteform').submit();"
-                            class="btn btn-danger">Delete</a>
+                            @can('user.update')
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            @endcan
+                            @can('user.delete')
+                                <a href="#"
+                                   onclick="event.preventDefault();document.getElementById('deleteform').submit();"
+                                   class="btn btn-danger">Delete</a>
+                            @endcan
                         </div>
                     </div>
                 </div>
             </div>
         </form>
+        @can('user.delete')
         <form id="deleteform" method="POST" action="{{route('user.destroy',['user'=>$user->id])}}">
             @csrf
             @method('DELETE')
             {{--                        <button type="submit" class="btn btn-danger ">Delete Profile</button>--}}
         </form>
+        @endcan
     </div>
 
 @endsection
