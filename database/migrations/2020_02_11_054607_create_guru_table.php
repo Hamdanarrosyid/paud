@@ -16,6 +16,7 @@ class CreateGuruTable extends Migration
         Schema::create('guru', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('tempat_id');
             $table->date('tanggal');
             $table->unsignedBigInteger('gender_id');
@@ -28,6 +29,7 @@ class CreateGuruTable extends Migration
             $table->foreign('tempat_id')->references('id')->on('kota');
             $table->foreign('gender_id')->references('id')->on('jenis_kelamin');
             $table->foreign('agama_id')->references('id')->on('agama');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

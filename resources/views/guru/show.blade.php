@@ -2,7 +2,8 @@
 
 @section('page-title')
     <div class="d-sm-flex align-items-center  border-bottom-warning justify-content-between mb-4">
-         <h1 class="h3 text-gray-800"><a href="{{route('guru.index')}}" class="text-gray-700 mr-4"><i class="fas fa-angle-left"></i></a>Guru</h1>
+        <h1 class="h3 text-gray-800"><a href="{{route('guru.index')}}" class="text-gray-700 mr-4"><i
+                    class="fas fa-angle-left"></i></a>Guru</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item font-weight-light"><a href="./">Home</a></li>
             <li class="breadcrumb-item font-weight-light" aria-current="page">Dashboard</li>
@@ -16,7 +17,7 @@
         <div class="col-lg-4 col-xlg-3 col-md-5">
             <div class="card">
                 <div class="mt-5 pb-5" style="text-align: center;">
-                    @if(in_array($data,['LAKI-LAKI','COWOK','LAKI LAKI']))
+                    @if(in_array($data,['LAKI-LAKI','COWOK','LAKI LAKI','']))
                         <img src="{{asset('img/child.png')}}" class="img-circle" width="150"/>
                     @else
                         <img src="{{asset('img/wedok.png')}}" class="img-circle" width="150"/>
@@ -36,26 +37,35 @@
                         <div class="form-group">
                             <label class="col-md-12">Nama Lengkap*</label>
                             <div class="col-md-12">
-                                <input type="text" name="nama" value="{{$guru->nama}}"
+                                <input type="text" name="nama" placeholder="Masukan nama lengkap" value="{{$guru->nama}}"
+                                       class="form-control form-control-line">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-12">Email*</label>
+                            <div class="col-md-12">
+                                <input disabled type="text" name="email" value="{{$guru->user->email}}"
                                        class="form-control form-control-line">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-12">No Hp*</label>
                             <div class="col-md-12 input-group flex-nowrap">
-                                <input type="text"  required name="nohp" value="{{$guru->nohp}}" class="form-control form-control-line">
+                                <input type="text" required name="nohp" placeholder="Masukan no hp" value="{{$guru->nohp}}"
+                                       class="form-control form-control-line">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-5">
                                 <label class="col-sm-12" for="tempat">Tempat*</label>
                                 <div class="col-sm-12">
-                                    <select name="tempat" class="form-control">
+                                    <select name="tempat" class="select2-single form-control">
                                         @foreach($kota as $data)
-                                            @if($data->kota== $guru->tempat->kota)
-                                                <option selected value="{{$guru->tempat->id}}">{{$guru->tempat->kota}}</option>
+                                            @if($data->id == $guru->tempat_id)
+                                                <option selected
+                                                        value="{{$guru->tempat->id}}">{{$guru->tempat->kota}}</option>
                                             @else
-                                            <option value="{{$data->id}}">{{$data->kota}}</option>
+                                                <option value="{{$data->id}}">{{$data->kota}}</option>
                                             @endif
                                         @endforeach
                                     </select>
@@ -74,10 +84,11 @@
                             <div class="col-sm-12">
                                 <select name="gender" class="form-control">
                                     @foreach($kelamin as $data)
-                                        @if($data->jeniskelamin== $guru->gender->jeniskelamin)
-                                            <option selected value="{{$guru->gender->id}}">{{$guru->gender->jeniskelamin}}</option>
+                                        @if($data->id== $guru->gender_id)
+                                            <option selected
+                                                    value="{{$guru->gender_id}}">{{$guru->gender->jeniskelamin}}</option>
                                         @else
-                                        <option value="{{$data->id}}">{{$data->jeniskelamin}}</option>
+                                            <option value="{{$data->id}}">{{$data->jeniskelamin}}</option>
                                         @endif
                                     @endforeach
                                 </select>
@@ -88,10 +99,11 @@
                             <div class="col-sm-12">
                                 <select name="agama" class="form-control">
                                     @foreach($agama as $data)
-                                        @if($data->agama== $guru->agama->agama)
-                                            <option selected value="{{$guru->agama->id}}">{{$guru->agama->agama}}</option>
+                                        @if($data->id == $guru->agama_id)
+                                            <option selected
+                                                    value="{{$guru->agama->id}}">{{$guru->agama->agama}}</option>
                                         @else
-                                        <option value="{{$data->id}}">{{$data->agama}}</option>
+                                            <option value="{{$data->id}}">{{$data->agama}}</option>
                                         @endif
                                     @endforeach
                                 </select>
@@ -100,28 +112,38 @@
                         <div class="form-group">
                             <label class="col-md-12">Alamat*</label>
                             <div class="col-md-12">
-                                <input required type="text" name="alamat" value="{{$guru->alamat}}" class="form-control form-control-line">
+                                <textarea required type="text" name="alamat" placeholder="Masukan alamat"
+                                          class="form-control form-control-line">{{$guru->alamat}}</textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">
                                 @can('guru.update')
-                                <button type="submit" class="btn btn-success">Update Profile</button>
+                                    <button type="submit" class="btn btn-success">Update Profile</button>
                                 @endcan
                                 @can('guru.delete')
-                                <a href="{{route('guru.destroy',['guru'=>$guru->id])}}"
-                                   onclick="event.preventDefault();document.getElementById('deleteform').submit();"
-                                   class="btn btn-danger">Delete Profile</a>
+{{--                                    <div class="col-sm-12">--}}
+                                        <button data-toggle="modal" data-target="#delete-user-profile" type="button" class="btn btn-danger">Delete Profile with user</button>
+                                    @if($guru->nama == !null || $guru->nohp == !null || $guru->alamat == !null || $guru->tempat_id == !null)
+                                        <button data-toggle="modal" data-target="#only-delete-profile" type="button" class="btn btn-warning">Only Delete Profile
+                                        </button>
+                                        @endif
+{{--                                    </div>--}}
                                 @endcan
                             </div>
                         </div>
                     </form>
                     @can('siswa.delete')
-                    <form id="deleteform" method="POST" action="{{route('guru.destroy',['guru'=>$guru->id])}}">
-                        @csrf
-                        @method('DELETE')
-{{--                        <button type="submit" class="btn btn-danger ">Delete Profile</button>--}}
-                    </form>
+                        <form id="deleteform" method="POST" action="{{route('guru.destroy',['guru'=>$guru->id])}}">
+                            @csrf
+                            @method('DELETE')
+                            {{--                        <button type="submit" class="btn btn-danger ">Delete Profile</button>--}}
+                        </form>
+                        <form id="only-profile" method="POST" action="{{route('guru.cdelete',['guru'=>$guru->id])}}">
+                            @csrf
+                            @method('DELETE')
+                            {{--                        <button type="submit" class="btn btn-danger ">Delete Profile</button>--}}
+                        </form>
                     @endcan
                 </div>
             </div>
@@ -129,4 +151,51 @@
         <!-- Column -->
     </div>
 
+    <div class="modal fade" id="only-delete-profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="d-flex justify-content-center">
+                    <div>
+                        <h1 style="font-size: 100px;color: #efbd67" class="fas fa-exclamation-circle mt-4"></h1>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <h2 class="text-gray-900">Apa anda yakin?</h2>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <h4 class="text-gray-700">Data anda tidak bisa dikembalikan!</h4>
+                    </div>
+                </div>
+                <div class="pb-4 d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary mr-2" onclick="event.preventDefault();document.getElementById('only-profile').submit();">Ya Hapus</button>
+                    <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">Batal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="delete-user-profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="d-flex justify-content-center">
+                    <div>
+                        <h1 style="font-size: 100px;color: #efbd67" class="fas fa-exclamation-circle mt-4"></h1>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <h2 class="text-gray-900">Apa anda yakin?</h2>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <h4 class="text-gray-700">Data anda tidak bisa dikembalikan!</h4>
+                    </div>
+                </div>
+                <div class="pb-4 d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary mr-2" onclick="event.preventDefault();document.getElementById('deleteform').submit();">Ya Hapus</button>
+                    <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">Batal</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

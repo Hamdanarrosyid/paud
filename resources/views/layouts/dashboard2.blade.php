@@ -107,6 +107,12 @@
             {{--                </a>--}}
             {{--            </li>--}}
         @endcan
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('mapel.index')}}">
+                <i class="fas fa-fw fa-sim-card"></i>
+                <span>Mapel</span>
+            </a>
+        </li>
         <hr class="sidebar-divider">
         <div class="version">Paud Version 0.1</div>
     </ul>
@@ -173,6 +179,8 @@
                                 <a class="dropdown-item" href="{{route('kota.index')}}">Kab/Kota</a>
                                 <a class="dropdown-item" href="{{route('pendidikan.index')}}">Pendidikan</a>
                                 <a class="dropdown-item" href="{{route('pekerjaan.index')}}">Pekerjaan</a>
+                                <a class="dropdown-item" href="{{route('kelas.index')}}">Kelas</a>
+                                <a class="dropdown-item" href="{{route('tahunajaran.index')}}">Tahun Ajaran</a>
                             </div>
                         </li>
                     @endcan

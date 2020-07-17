@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Guru;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Role;
@@ -76,12 +77,16 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role' => ['required', 'integer'],
         ]);
+//        Guru::create(['email'=>$request->email]);
         $create = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role_id' => $request->role,
         ]);
+        if ($create){
+            Guru::create(['user_id'=>$create->id]);
+        }
         event(new Registered($create));
         $role_id = $request->role;
         if ($role_id !== null) {
@@ -100,7 +105,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role_id' => $data['role'],
+//            'role_id' => $data['role'],
         ]);
         return $create;
     }
@@ -130,7 +135,8 @@ class RegisterController extends Controller
         User::where('id', $user->id)
             ->update([
                 'name' => $request->name,
-                'role_id' => $request->role
+                'role_id' => $request->role,
+                'password'=>$request->password
             ]);
         $user_id = User::find($user->id);
         $user_id->role()->sync([$request->role]);

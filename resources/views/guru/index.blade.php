@@ -25,21 +25,23 @@
                     <thead class="thead-light">
                     <tr>
                         <th>Nama</th>
+                        <th>Email</th>
                         <th class="px-5">Tempat tanggal Lahir</th>
                         <th>Gender</th>
-                        <th>Alamat</th>
+{{--                        <th>Alamat</th>--}}
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($guru as $data)
                         <tr>
-                            <td>{{$data->nama}}</td>
+                            <td>{{$data->nama == !null? $data->nama:'-'}}</td>
+                            <td>{{$data->user->email}}</td>
                             <td >
-                                {{$data->tempat->kota}} {{$data->tanggal}}
+                                {{$data->tempat_id == !null? "{$data->tempat->kota} {$data->tanggal}":'-'}}
                             </td>
-                            <td>{{$data->gender->jeniskelamin}}</td>
-                            <td>{{$data->alamat}}</td>
+                            <td>{{$data->gender_id == !null? "{$data->gender->jeniskelamin}":'-'}}</td>
+{{--                            <td>{{$data->alamat}}</td>--}}
                             <td><a href="{{route('guru.show',['guru'=>$data->id])}}" class="badge badge-info font-weight-light">Show & Edit</a></td>
                         </tr>
                     @endforeach

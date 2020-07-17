@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use Illuminate\Support\Facades\Auth;
 use App\Guru;
 use App\Prasarana;
 use App\Sarana;
@@ -11,10 +13,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function __construct()
     {
@@ -24,12 +28,10 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function index()
     {
-        $this->middleware('auth');
-
         $siswa = Siswa::all()->count();
         $guru = Guru::all()->count();
         $walimurid = Walimurid::all()->count();

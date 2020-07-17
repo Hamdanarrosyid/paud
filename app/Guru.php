@@ -8,7 +8,7 @@ class Guru extends Model
 {
     protected $table = 'guru';
     protected $id = 'id';
-    protected $fillable = ['nama','tempat_id', 'tanggal','gender_id','agama_id','nohp','alamat'];
+    protected $fillable = ['user_id','nama','tempat_id', 'tanggal','gender_id','agama_id','nohp','alamat'];
 
     public function tempat(){
     return $this->belongsTo('App\Kota','tempat_id');
@@ -18,5 +18,8 @@ class Guru extends Model
     }
     public function agama(){
         return $this->belongsTo('App\Agama','agama_id');
+    }
+    public function user(){
+        return $this->belongsTo('App\User');
     }
 }

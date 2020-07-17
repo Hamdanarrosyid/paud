@@ -41,4 +41,8 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Role');
     }
+    public function guru()
+    {
+        return $this->hasOne(Guru::class);
+    }
 }

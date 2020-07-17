@@ -1,5 +1,13 @@
 @extends('layouts.dashboard2')
 @section('page-title')
+    @if(session('status'))
+        <div class="alert alert-success alert-dismissible fade show my-2" role="alert">
+            {{session('status')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
         <ol class="breadcrumb">

@@ -22,7 +22,7 @@ class GuruController extends Controller
 {
     public function __construct()
     {
-        $this->authorizeResource(Guru::class,'guru');
+//        $this->authorizeResource(Guru::class,'guru');
     }
 
     /**
@@ -43,10 +43,10 @@ class GuruController extends Controller
      */
     public function create()
     {
-            $kota = Kota::all();
-            $kelamin = Kelamin::all();
-            $agama = Agama::all();
-            return view('guru.create', ['kota' => $kota, 'kelamin' => $kelamin, 'agama' => $agama]);
+        $kota = Kota::all();
+        $kelamin = Kelamin::all();
+        $agama = Agama::all();
+        return view('guru.create', ['kota' => $kota, 'kelamin' => $kelamin, 'agama' => $agama]);
 
     }
 
@@ -91,7 +91,11 @@ class GuruController extends Controller
         $kota = Kota::all();
         $kelamin = Kelamin::all();
         $agama = Agama::all();
-        $data = $guru->gender->jeniskelamin;
+        if ($guru->gender_id == null) {
+            $data = '';
+        } else {
+            $data = $guru->gender->jeniskelamin;
+        }
         $upper = strtoupper($data);
 
         return view('guru.show', [
@@ -157,13 +161,29 @@ class GuruController extends Controller
      */
     public function destroy(Guru $guru)
     {
-        try {
-            $guru::where('id', $guru->id);
-            $guru->delete();
-        } catch (Exception $exception) {
-
-            return redirect()->route('guru.index')->with('error', 'Tidak dapat menghapus data karena data digunakan pada tabel lain');
+        $guru::where('id', $guru->id);
+        $delete = $guru->delete();
+        if ($delete) {
+            $user = $guru->user->role_id;
+            $guru->user->role()->detach($user);
+            User::where('id', $guru->user_id)->delete();
+            return redirect()->route('guru.index')->with('status', 'Berhasil menghapus data');
         }
-        return redirect()->route('guru.index')->with('status', 'Berhasil menghapus data');
+    }
+
+    public function cdelete(Guru $guru)
+    {
+        Guru::Where('id', $guru->id)
+            ->update([
+                'nama' => null,
+                'nohp' => null,
+                'tempat_id' => null,
+                'tanggal' => null,
+                'gender_id' => null,
+                'agama_id' => null,
+                'alamat' => null
+            ]);
+        return redirect()->route('guru.index')->with('status', 'Berhasil menghapus profil data');
+
     }
 }
