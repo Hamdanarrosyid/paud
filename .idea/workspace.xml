@@ -26,21 +26,6 @@
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:composer" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:composer" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:symfony" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
@@ -49,7 +34,22 @@
   <component name="ChangeListManager">
     <list default="true" id="593c7ba0-e20d-4284-ab00-5843925b0bef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GuruController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GuruController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MapelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MapelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_11_054607_create_guru_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_11_054607_create_guru_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guru/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guru/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guru/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mapel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mapel/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/role/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/role/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/role/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/role/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,10 +171,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/vendor" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\paud-v0.1\public\vendor" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\paud-v0.1\resources\views\settingmaster\role" />
       <recent name="C:\laragon\www\paud-v0.1\resources\views" />
@@ -231,7 +234,8 @@
       <workItem from="1594774362611" duration="533000" />
       <workItem from="1594899574701" duration="9099000" />
       <workItem from="1594948056542" duration="24876000" />
-      <workItem from="1595042553347" duration="1034000" />
+      <workItem from="1595042553347" duration="1278000" />
+      <workItem from="1595068625893" duration="17178000" />
     </task>
     <servers />
   </component>
@@ -255,10 +259,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="180" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.768@0.0.1366.768" timestamp="1593802292253" />
-    <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594980953042">
+    <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595095795080">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1594980953042" />
+    <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1595095795080" />
     <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1594774898850">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -267,13 +271,13 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="480" y="107" key="NewPhpClassDialog/0.0.1366.768@0.0.1366.768" timestamp="1593025703554" />
-    <state x="339" y="172" key="run.anything.popup" timestamp="1594453946861">
+    <state x="339" y="172" key="run.anything.popup" timestamp="1595085026548">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1594453946861" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1595042783933">
+    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1595085026548" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1595095118715">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1595042783933" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1595095118715" />
   </component>
 </project>

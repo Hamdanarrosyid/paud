@@ -1,7 +1,7 @@
 @extends('layouts.dashboard2')
 
 @section('page-title')
-    <div class="d-sm-flex align-items-center  border-bottom-warning justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 text-gray-800">Guru</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item font-weight-normal"><a href="./">Home</a></li>

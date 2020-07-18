@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Guru;
 use App\Kelas;
 use App\Mapel;
 use App\Tahunajaran;
@@ -10,6 +11,11 @@ use Illuminate\Validation\ValidationException;
 
 class MapelController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Guru::class,'guru');
+    }
+
     protected $eror = false;
     /**
      * Display a listing of the resource.

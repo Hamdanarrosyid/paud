@@ -107,12 +107,14 @@
             {{--                </a>--}}
             {{--            </li>--}}
         @endcan
+        @can('guru.viewAny')
         <li class="nav-item">
             <a class="nav-link" href="{{route('mapel.index')}}">
                 <i class="fas fa-fw fa-sim-card"></i>
                 <span>Mapel</span>
             </a>
         </li>
+        @endcan
         <hr class="sidebar-divider">
         <div class="version">Paud Version 0.1</div>
     </ul>

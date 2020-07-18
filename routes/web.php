@@ -51,5 +51,5 @@ Route::resource('jadwal','JadwalController')->only('store','index','update','des
 Route::get('jadwal/fetch','JadwalController@fetch')->name('jadwal.fetch')->middleware(['auth','guru']);
 Route::resource('sarana','SaranaController')->middleware(['auth','guru']);
 Route::resource('prasarana','PrasaranaController')->middleware(['auth','guru']);
-Route::get('datadiri','ProfileController@index')->name('profile.index')->middleware(['auth']);
-Route::patch('datadiri/{guru}','ProfileController@update')->name('profile.update')->middleware(['auth']);
+Route::get('datadiri','ProfileController@index')->name('profile.index')->middleware(['auth','notguru']);
+Route::patch('datadiri/{guru}','ProfileController@update')->name('profile.update')->middleware(['auth','notguru']);

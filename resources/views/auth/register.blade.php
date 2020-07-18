@@ -70,6 +70,7 @@
                         <div class="form-group">
                             <label>Role*</label>
                             <select name="role" class="form-control @error('role') is-invalid @enderror">
+                                <option  value="{{null}}">Select..</option>
                                 @foreach($roles as $data)
                                     <option value="{{$data->id}}">{{$data->role}}</option>
                                 @endforeach
@@ -87,5 +88,6 @@
             </div>
         </form>
     </div>
+
 
 @endsection

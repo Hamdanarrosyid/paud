@@ -84,8 +84,10 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
             'role_id' => $request->role,
         ]);
-        if ($create){
-            Guru::create(['user_id'=>$create->id]);
+        if ($request->role == 2) {
+            if ($create) {
+                Guru::create(['user_id' => $create->id]);
+            }
         }
         event(new Registered($create));
         $role_id = $request->role;
@@ -116,7 +118,7 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
-            $this->guard()->login($user);
+        $this->guard()->login($user);
 
         return redirect()->route('home');
     }
@@ -131,12 +133,28 @@ class RegisterController extends Controller
 
     public function update(Request $request, User $user)
     {
+//        dd($request);
         $this->authorize('user.update', User::class);
+        if ($request->password == null) {
+//            dd($request);
+            $this->validate($request, [
+                'name' => ['required', 'string', 'max:255'],
+//                'password' => ['string', 'min:8', 'confirmed'],
+                'role' => ['required', 'integer'],
+            ]);
+        } else {
+            $this->validate($request, [
+                'name' => ['required', 'string', 'max:255'],
+                'password' => ['string', 'min:8', 'confirmed'],
+                'role' => ['required', 'integer'],
+            ]);
+        }
+//        dd($request);
         User::where('id', $user->id)
             ->update([
                 'name' => $request->name,
                 'role_id' => $request->role,
-//                'password'=>$request->password
+                'password' => Hash::make($request->password)
             ]);
         $user_id = User::find($user->id);
         $user_id->role()->sync([$request->role]);
@@ -146,9 +164,11 @@ class RegisterController extends Controller
     public function destroy(User $user)
     {
         $this->authorize('user.delete', User::class);
+        if ($user->guru == !null) {
+            Guru::where('id', $user->guru->id)->delete();
+        }
         $user_id = User::find($user->id);
         $user_id->role()->detach($user->role_id);
-//        dd($user->role);
         $user::where('id', $user->id);
         $user->delete();
         return redirect()->route('user')->with('status', 'Berhasil menghapus data');

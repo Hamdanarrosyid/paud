@@ -1,7 +1,7 @@
 @extends('layouts.dashboard2')
 
 @section('page-title')
-    <div class="d-sm-flex align-items-center  border-bottom-warning justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 text-gray-800"><a href="{{route('guru.index')}}" class="text-gray-700 mr-4"><i
                     class="fas fa-angle-left"></i></a>Guru</h1>
         <ol class="breadcrumb">
@@ -17,8 +17,10 @@
         <div class="col-lg-4 col-xlg-3 col-md-5">
             <div class="card">
                 <div class="mt-5 pb-5" style="text-align: center;">
-                    @if(in_array($data,['LAKI-LAKI','COWOK','LAKI LAKI','']))
+                    @if(in_array($data,['LAKI-LAKI','COWOK','LAKI LAKI']))
                         <img src="{{asset('img/child.png')}}" class="img-circle" width="150"/>
+                    @elseif($data == '')
+                        <p class="text-gray-600">not found</p>
                     @else
                         <img src="{{asset('img/wedok.png')}}" class="img-circle" width="150"/>
                     @endif
@@ -122,18 +124,16 @@
                                     <button type="submit" class="btn btn-success">Update Profile</button>
                                 @endcan
                                 @can('guru.delete')
-{{--                                    <div class="col-sm-12">--}}
                                         <button data-toggle="modal" data-target="#delete-user-profile" type="button" class="btn btn-danger">Delete Profile with user</button>
-                                    @if($guru->nama == !null || $guru->nohp == !null || $guru->alamat == !null || $guru->tempat_id == !null)
+{{--                                    @if($guru->nama == !null || $guru->nohp == !null || $guru->alamat == !null || $guru->tempat_id == !null)--}}
                                         <button data-toggle="modal" data-target="#only-delete-profile" type="button" class="btn btn-warning">Only Delete Profile
                                         </button>
-                                        @endif
-{{--                                    </div>--}}
+{{--                                        @endif--}}
                                 @endcan
                             </div>
                         </div>
                     </form>
-                    @can('siswa.delete')
+                    @can('guru.delete')
                         <form id="deleteform" method="POST" action="{{route('guru.destroy',['guru'=>$guru->id])}}">
                             @csrf
                             @method('DELETE')

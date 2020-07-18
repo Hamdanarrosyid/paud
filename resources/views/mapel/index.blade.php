@@ -1,7 +1,7 @@
 @extends('layouts.dashboard2')
 
 @section('page-title')
-    <div class="d-sm-flex align-items-center  border-bottom-info justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 text-gray-800">Mapel</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item font-weight-normal"><a href="./">Home</a></li>
@@ -16,12 +16,12 @@
         <div class="card mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
-                {{--                @can('mapel.create')--}}
+                                @can('guru.create')
                 <h6 class="m-0 font-weight-bold text-primary"><a href="#" data-toggle="modal"
                                                                  data-target="#createmodal"><i
                             class="fas fa-plus"></i>
                         Tambah Data</a></h6>
-                {{--                @endcan--}}
+                                @endcan
             </div>
             <div class="table-responsive p-3">
                 <table class="table align-items-center table-flush table-hover" id="dataTable">
@@ -33,9 +33,9 @@
                         <th>Tahun Ajaran</th>
                         <th>Kelas</th>
                         <th>Keterangan</th>
-                        {{--                        @canany(['mapel.update','mapel.delete'])--}}
+                                                @canany(['guru.update','guru.delete'])
                         <th>Action</th>
-                        {{--                        @endcan--}}
+                                                @endcan
                     </tr>
                     </thead>
                     <tbody>
@@ -47,18 +47,18 @@
                             <td>{{$data->tahun->tahun}}<span> - semester </span>{{$data->tahun->semester}}</td>
                             <td>{{$data->kelas->kelas}}</td>
                             <td>{{$data->keterangan}}</td>
-                            {{--                            @canany(['mapel.update','mapel.delete'])--}}
+                                                        @canany(['guru.update','guru.delete'])
                             <td>
-                                {{--                                    @can('mapel.update')--}}
+                                                                    @can('guru.update')
                                 <a href="#" data-toggle="modal" data-target="#editmodal-{{$data->id}}"
                                    class="badge badge-primary font-weight-light">Edit</a>
-                                {{--                                    @endcan--}}
-                                {{--                                    @can('mapel.delete')--}}
+                                                                    @endcan
+                                                                    @can('guru.delete')
                                 <a href="#" data-toggle="modal" data-target="#hapusmodal-{{$data->id}}"
                                    class="badge badge-danger font-weight-light">Delete</a>
-                                {{--                                    @endcan--}}
+                                                                    @endcan
                             </td>
-                            {{--                            @endcan--}}
+                                                        @endcan
                         </tr>
                     @endforeach
                     </tbody>

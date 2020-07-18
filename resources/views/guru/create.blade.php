@@ -1,7 +1,7 @@
 @extends('layouts.dashboard2')
 
 @section('page-title')
-    <div class="d-sm-flex align-items-center  border-bottom-warning justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 text-gray-800"><a href="{{route('guru.index')}}" class="text-gray-700 mr-4"><i class="fas fa-angle-left"></i></a>Pendaftaran Guru</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item font-weight-normal"><a href="./">Home</a></li>
@@ -31,6 +31,20 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label for="email">Email*</label>
+                            <select class="select2-single form-control @error('user_id') is-invalid @enderror" name="user_id" id="email">
+                                <option value="{{null}}">Select..</option>
+                                @foreach($users as $user)
+                                <option value="{{$user->id}}">{{$user->email}}</option>
+                                @endforeach
+                            </select>
+                            @error('user_id')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label for="nohp">No Telfon*</label>
                             <input name="nohp" id="nohp" class="form-control input-element @error('nohp') is-invalid @enderror" placeholder="Masukan nohp" type="text">
                             @error('nohp')
@@ -43,6 +57,7 @@
                             <div class="form-group col-5">
                                 <label for="tempat">Tempat*</label>
                                 <select name="tempat" class="form-control @error('tempat') is-invalid @enderror">
+                                    <option value="{{null}}">Select..</option>
                                     @foreach($kota as $data)
                                         <option name="tempat" value="{{$data->id}}">{{$data->kota}}</option>
                                     @endforeach
@@ -66,6 +81,7 @@
                         <div class="form-group">
                             <label>Gender*</label>
                             <select name="gender" class="form-control @error('gender') is-invalid @enderror">
+                                <option value="{{null}}">Select..</option>
                                 @foreach($kelamin as $data)
                                     <option  value="{{$data->id}}">{{$data->jeniskelamin}}</option>
                                 @endforeach
@@ -79,6 +95,7 @@
                         <div class="form-group">
                             <label for="agama">Agama*</label>
                             <select name="agama" class="form-control  @error('agama') is-invalid @enderror">
+                                <option value="{{null}}">Select..</option>
                                 @foreach($agama as $data)
                                     <option value="{{$data->id}}">{{$data->agama}}</option>
                                 @endforeach
@@ -91,8 +108,8 @@
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat*</label>
-                            <input type="text" name="alamat" id="alamat" class="form-control  @error('alamat') is-invalid @enderror"
-                                   placeholder="Masukan alamat">
+                            <textarea name="alamat" id="alamat" class="form-control  @error('alamat') is-invalid @enderror"
+                                      placeholder="Masukan alamat"></textarea>
                             @error('alamat')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -106,5 +123,4 @@
             </div>
         </form>
     </div>
-
 @endsection

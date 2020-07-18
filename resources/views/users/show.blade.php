@@ -1,7 +1,7 @@
 @extends('layouts.dashboard2')
 
 @section('page-title')
-    <div class="d-sm-flex align-items-center  border-bottom-warning justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 text-gray-800"><a href="{{route('user')}}" class="text-gray-700 mr-4"><i
                     class="fas fa-angle-left"></i></a>Edit User</h1>
         <ol class="breadcrumb">
@@ -34,7 +34,7 @@
                                     </span>
                             @enderror
                         </div>
-                        <div class="form-group >
+                        <div class="form-group">
                             <label for="email">{{ __('E-Mail Address') }}</label>
                             <input disabled id="email" type="email"
                                    class="form-control @error('email') is-invalid @enderror"
@@ -46,34 +46,38 @@
                                     </span>
                             @enderror
                         </div>
-{{--                        <div class="form-group">--}}
-{{--                            <label for="password">{{ __('Password') }}</label>--}}
-{{--                            <input id="password" type="password"--}}
-{{--                                   class="form-control @error('password') is-invalid @enderror" name="password" required--}}
-{{--                                   autocomplete="new-password" placeholder="********">--}}
+                        <button class="btn-sm btn-primary col-12" type="button" id="p">Ubah password</button>
+                        <div class="form-group" id="form-pass">
+                            <div class="form-group">
+                                <label for="password">{{ __('Password') }}</label>
+                                <input id="password" type="password"
+                                       class="form-control @error('password') is-invalid @enderror" name="password"
+                                       autocomplete="new-password" placeholder="********">
 
-{{--                            @error('password')--}}
-{{--                            <span class="invalid-feedback" role="alert">--}}
-{{--                                                                <strong>{{ $message }}</strong>--}}
-{{--                                                            </span>--}}
-{{--                            @enderror--}}
-{{--                        </div>--}}
-{{--                        <div class="form-group">--}}
-{{--                            <label for="password-confirm">{{ __('Confirm Password*') }}</label>--}}
-{{--                            <input id="password-confirm" type="password"--}}
-{{--                                   class="form-control @error('confirm-password') is-invalid @enderror"--}}
-{{--                                   name="password_confirmation" required autocomplete="new-password"--}}
-{{--                                   placeholder="********">--}}
-{{--                            @error('confirm-password')--}}
-{{--                            <span class="invalid-feedback" role="alert">--}}
-{{--                                                                <strong>{{ $message }}</strong>--}}
-{{--                                                            </span>--}}
-{{--                            @enderror--}}
-{{--                        </div>--}}
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="password-confirm">{{ __('Confirm Password*') }}</label>
+                                <input id="password-confirm" type="password"
+                                       class="form-control @error('confirm-password') is-invalid @enderror"
+                                       name="password_confirmation" autocomplete="new-password"
+                                       placeholder="********">
+                                @error('confirm-password')
+                                <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                @enderror
+                            </div>
+                        </div>
                         {{--                        {{dd($user->role->id)}}--}}
                         <div class="form-group">
                             <label>Role*</label>
                             <select name="role" class="form-control @error('role') is-invalid @enderror">
+                                <option  value="{{null}}">Select..</option>
                                 @foreach($roles as $data)
                                     @if($user->role_id === $data->id)
                                         <option selected value="{{$user->role_id}}">{{$data->role}}</option>
@@ -93,9 +97,9 @@
                                 <button type="submit" class="btn btn-success">Submit</button>
                             @endcan
                             @can('user.delete')
-                                <a href="#"
-                                   onclick="event.preventDefault();document.getElementById('deleteform').submit();"
-                                   class="btn btn-danger">Delete</a>
+                                <button type="button" data-toggle="modal" data-target="#delete-modal"
+                                        class="btn btn-danger">Delete
+                                </button>
                             @endcan
                         </div>
                     </div>
@@ -111,4 +115,56 @@
         @endcan
     </div>
 
+    <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="d-flex justify-content-center">
+                    <div>
+                        @if($user->guru == null)
+                            <h1 style="font-size: 100px;color: #efbd67" class="fas fa-exclamation-circle mt-4"></h1>
+                        @else
+                            <h1 style="font-size: 100px;color: #f13333" class="fas fa-exclamation-circle mt-4"></h1>
+                        @endif
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <h2 class="text-gray-900">Apa anda yakin?</h2>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        @if($user->guru == null)
+                            <h4 class="text-gray-700">Data anda tidak bisa dikembalikan!</h4>
+                        @else
+                            <div>
+                                <h5 class="text-gray-900 justify-content-center">Akun ini terhubung dengan data <a href="{{route('guru.show',['guru'=>$user->guru->id])}}">{{$user->guru->nama}}</a></h5>
+                                <p class="text-gray-700 d-flex justify-content-center">Jika anda yakin akan menghapus data {{$user->guru->nama}} seluruh datanya akan ikut terhapus.</p>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+                <div class="pb-4 d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary mr-2"
+                            onclick="event.preventDefault();document.getElementById('deleteform').submit();">Ya Hapus
+                    </button>
+                    <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">Batal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            {{--if ({?W@error()})--}}
+            $('#form-pass').hide();
+            $('#p').click(function () {
+                // $('#p').text('hide');
+                $('#form-pass').toggle(500);
+            });
+        })
+    </script>
 @endsection
