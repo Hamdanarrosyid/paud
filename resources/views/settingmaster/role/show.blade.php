@@ -31,26 +31,26 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-lg-4">
-                                <label for="User" class="col-form-label">Pengaturan User Permission:</label>
-                                @foreach($permissions as $permission)
-                                    <div class="form-check col">
-                                        @if($permission->for == 'user')
-                                            <input class="form-check-input" type="checkbox"
-                                                   @foreach($role->permissions as $check)
-                                                   @if($check->id == $permission->id)
-                                                   checked
-                                                   @endif
-                                                   @endforeach
-                                                   value="{{$permission->id}}"
-                                                   id="{{$permission->id}}" name="permission[]">
-                                            <label class="form-check-label" for="{{$permission->id}}">
-                                                {{$permission->permission}}
-                                            </label>
-                                        @endif
-                                    </div>
-                                @endforeach
-                            </div>
+{{--                            <div class="col-lg-4">--}}
+{{--                                <label for="User" class="col-form-label">Pengaturan User Permission:</label>--}}
+{{--                                @foreach($permissions as $permission)--}}
+{{--                                    <div class="form-check col">--}}
+{{--                                        @if($permission->for == 'user')--}}
+{{--                                            <input class="form-check-input" type="checkbox"--}}
+{{--                                                   @foreach($role->permissions as $check)--}}
+{{--                                                   @if($check->id == $permission->id)--}}
+{{--                                                   checked--}}
+{{--                                                   @endif--}}
+{{--                                                   @endforeach--}}
+{{--                                                   value="{{$permission->id}}"--}}
+{{--                                                   id="{{$permission->id}}" name="permission[]">--}}
+{{--                                            <label class="form-check-label" for="{{$permission->id}}">--}}
+{{--                                                {{$permission->permission}}--}}
+{{--                                            </label>--}}
+{{--                                        @endif--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
                             <div class="col-lg-4">
                                 <label for="User" class="col-form-label">Data Siswa Permission:</label>
                                 @foreach($permissions as $permission)
@@ -113,26 +113,26 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <div class="col-lg-4">
-                                <label for="User" class="col-form-label">Data Role Permission:</label>
-                                @foreach($permissions as $permission)
-                                    <div class="form-check col">
-                                        @if($permission->for == 'role')
-                                            <input class="form-check-input" type="checkbox"
-                                                   @foreach($role->permissions as $check)
-                                                   @if($check->id == $permission->id)
-                                                   checked
-                                                   @endif
-                                                   @endforeach
-                                                   value="{{$permission->id}}"
-                                                   id="{{$permission->id}}" name="permission[]">
-                                            <label class="form-check-label" for="{{$permission->id}}">
-                                                {{$permission->permission}}
-                                            </label>
-                                        @endif
-                                    </div>
-                                @endforeach
-                            </div>
+{{--                            <div class="col-lg-4">--}}
+{{--                                <label for="User" class="col-form-label">Data Role Permission:</label>--}}
+{{--                                @foreach($permissions as $permission)--}}
+{{--                                    <div class="form-check col">--}}
+{{--                                        @if($permission->for == 'role')--}}
+{{--                                            <input class="form-check-input" type="checkbox"--}}
+{{--                                                   @foreach($role->permissions as $check)--}}
+{{--                                                   @if($check->id == $permission->id)--}}
+{{--                                                   checked--}}
+{{--                                                   @endif--}}
+{{--                                                   @endforeach--}}
+{{--                                                   value="{{$permission->id}}"--}}
+{{--                                                   id="{{$permission->id}}" name="permission[]">--}}
+{{--                                            <label class="form-check-label" for="{{$permission->id}}">--}}
+{{--                                                {{$permission->permission}}--}}
+{{--                                            </label>--}}
+{{--                                        @endif--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+{{--                            </div>--}}
                             <div class="col-lg-4">
                                 <label for="User" class="col-form-label">Data Sarpras Permission:</label>
                                 @foreach($permissions as $permission)
@@ -158,10 +158,10 @@
 
 
                         <div class="d-flex flex-row justify-content-end">
-                            <button type="submit" class="btn btn-sm btn-success mr-2">Save</button>
+                            <button type="submit" class="btn btn-success mr-2">Save</button>
                             <a href="#"
                                onclick="event.preventDefault();document.getElementById('deleteform').submit();"
-                               class="btn btn-danger btn-sm">Delete</a>
+                               class="btn @if($role->id == 1 || $role->id == 2 || $role->id == 3) d-none @endif btn-danger">Delete</a>
                         </div>
                     </div>
                 </div>

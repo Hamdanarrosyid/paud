@@ -26,7 +26,7 @@
             <li class="list-group-item d-flex justify-content-between"><span class="mt-2 text-capitalize">{{$data->role}}</span>
                 <div>
                     @can('role.update')
-                    <a href="{{route('role.show',['role'=>$data->id])}}" type="button"class="badge badge-primary font-weight-light">lihat Permission</a>
+                    <a href="{{route('role.show',['role'=>$data->id])}}" type="button"class="@if($data->id == 1) d-none @endif badge badge-primary font-weight-light">lihat Permission</a>
                     @endcan
                 </div>
             </li>

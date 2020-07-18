@@ -62,6 +62,9 @@ class RoleController extends Controller
     public function show(Role $role)
     {
         $permissions = Permissions::all();
+        if ($role->id == 1){
+            return abort(403);
+        }
         return view('settingmaster.role.show',['role'=>$role,'permissions'=>$permissions]);
     }
 
@@ -86,6 +89,9 @@ class RoleController extends Controller
     public function update(Request $request, Role $role)
     {
 //        dd($request);
+        if ($role->id == 1){
+            return abort(403);
+        }
         $this->validate($request,[
             'role'=>'required|string|max:50',
             'permission'=>'array'
@@ -106,6 +112,9 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
+        if ($role->id == 1 || $role->id == 2 || $role->id == 3){
+            return abort(403);
+        }
         $role::where('id', $role->id);
         $role->delete();
         return redirect()->route('role.index')->with('status', 'Berhasil menghapus data');

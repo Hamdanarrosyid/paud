@@ -18,5 +18,8 @@ class RoleTableSeeder extends Seeder
         DB::table('role')->insert([
             'role' => 'guru',
         ]);
+        DB::table('role')->insert([
+            'role' => 'walimurid',
+        ]);
     }
 }
