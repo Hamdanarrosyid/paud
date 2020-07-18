@@ -136,7 +136,7 @@ class RegisterController extends Controller
             ->update([
                 'name' => $request->name,
                 'role_id' => $request->role,
-                'password'=>$request->password
+//                'password'=>$request->password
             ]);
         $user_id = User::find($user->id);
         $user_id->role()->sync([$request->role]);

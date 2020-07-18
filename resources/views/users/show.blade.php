@@ -46,30 +46,30 @@
                                     </span>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <label for="password">{{ __('Password') }}</label>
-                            <input id="password" type="password"
-                                   class="form-control @error('password') is-invalid @enderror" name="password" required
-                                   autocomplete="new-password" placeholder="********">
+{{--                        <div class="form-group">--}}
+{{--                            <label for="password">{{ __('Password') }}</label>--}}
+{{--                            <input id="password" type="password"--}}
+{{--                                   class="form-control @error('password') is-invalid @enderror" name="password" required--}}
+{{--                                   autocomplete="new-password" placeholder="********">--}}
 
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $message }}</strong>
-                                                            </span>
-                            @enderror
-                        </div>
-                        <div class="form-group">
-                            <label for="password-confirm">{{ __('Confirm Password*') }}</label>
-                            <input id="password-confirm" type="password"
-                                   class="form-control @error('confirm-password') is-invalid @enderror"
-                                   name="password_confirmation" required autocomplete="new-password"
-                                   placeholder="********">
-                            @error('confirm-password')
-                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $message }}</strong>
-                                                            </span>
-                            @enderror
-                        </div>
+{{--                            @error('password')--}}
+{{--                            <span class="invalid-feedback" role="alert">--}}
+{{--                                                                <strong>{{ $message }}</strong>--}}
+{{--                                                            </span>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+{{--                        <div class="form-group">--}}
+{{--                            <label for="password-confirm">{{ __('Confirm Password*') }}</label>--}}
+{{--                            <input id="password-confirm" type="password"--}}
+{{--                                   class="form-control @error('confirm-password') is-invalid @enderror"--}}
+{{--                                   name="password_confirmation" required autocomplete="new-password"--}}
+{{--                                   placeholder="********">--}}
+{{--                            @error('confirm-password')--}}
+{{--                            <span class="invalid-feedback" role="alert">--}}
+{{--                                                                <strong>{{ $message }}</strong>--}}
+{{--                                                            </span>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
                         {{--                        {{dd($user->role->id)}}--}}
                         <div class="form-group">
                             <label>Role*</label>
