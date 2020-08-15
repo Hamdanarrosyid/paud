@@ -13,6 +13,7 @@
     <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('css/ruang-admin.min.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendor/select2/dist/css/select2.min.css')}}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset('css/simple-calendar.css')}}">
     <link rel="stylesheet" href="{{asset('css/demo.css')}}">
@@ -108,12 +109,12 @@
             {{--            </li>--}}
         @endcan
         @can('guru.viewAny')
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('mapel.index')}}">
-                <i class="fas fa-fw fa-sim-card"></i>
-                <span>Mapel</span>
-            </a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('mapel.index')}}">
+                    <i class="fas fa-fw fa-sim-card"></i>
+                    <span>Mapel</span>
+                </a>
+            </li>
         @endcan
         <hr class="sidebar-divider">
         <div class="version">Paud Version 0.1</div>
@@ -183,6 +184,7 @@
                                 <a class="dropdown-item" href="{{route('pekerjaan.index')}}">Pekerjaan</a>
                                 <a class="dropdown-item" href="{{route('kelas.index')}}">Kelas</a>
                                 <a class="dropdown-item" href="{{route('tahunajaran.index')}}">Tahun Ajaran</a>
+                                <a class="dropdown-item" href="{{route('sesi.index')}}">Sesi</a>
                             </div>
                         </li>
                     @endcan
@@ -270,6 +272,7 @@
 <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+<script src="{{asset('vendor/select2/dist/js/select2.min.js')}}"></script>
 <script src="{{asset('js/ruang-admin.min.js')}}"></script>
 {{--<script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>--}}
 {{--<script src="{{asset('js/demo/chart-area-demo.js')}}"></script>--}}
@@ -283,6 +286,12 @@
     $(document).ready(function () {
         $('#dataTable').DataTable(); // ID From dataTable
         $('#dataTableHover').DataTable(); // ID From dataTable with Hover
+        $('#myMultiple').select2({
+            placeholder:'Select..',
+        });
+        $('.select-single').select2({
+            placeholder:'Select..',
+        });
     });
     // $('input[name="nohp"]').mask('0000 0000 000000');
     var cleave = new Cleave('.input-element', {

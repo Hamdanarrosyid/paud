@@ -26,9 +26,11 @@ Route::resource('kota','KotaController')->middleware(['auth','guru']);
 Route::resource('agama','AgamaController')->middleware(['auth']);
 Route::resource('pendidikan','PendidikanController')->middleware(['auth','guru']);
 Route::resource('pekerjaan','PekerjaanController')->middleware(['auth','guru']);
+Route::resource('sesi','SesiController')->middleware(['auth','guru']);
 Route::resource('tahunajaran','TahunajaranController')->middleware('auth','guru');
 Route::resource('kelas','KelasController')->middleware('auth','guru');
 Route::resource('mapel','MapelController')->middleware('auth','guru');
+Route::resource('mapelguru','MapelguruController')->middleware('auth','guru');
 Route::resource('role','RoleController')->middleware('auth','guru');
 
 Route::resource('siswa','SiswaController')->middleware(['auth','guru']);

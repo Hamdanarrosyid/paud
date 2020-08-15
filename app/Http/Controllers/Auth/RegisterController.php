@@ -133,13 +133,10 @@ class RegisterController extends Controller
 
     public function update(Request $request, User $user)
     {
-//        dd($request);
         $this->authorize('user.update', User::class);
         if ($request->password == null) {
-//            dd($request);
             $this->validate($request, [
                 'name' => ['required', 'string', 'max:255'],
-//                'password' => ['string', 'min:8', 'confirmed'],
                 'role' => ['required', 'integer'],
             ]);
         } else {
@@ -149,13 +146,16 @@ class RegisterController extends Controller
                 'role' => ['required', 'integer'],
             ]);
         }
-//        dd($request);
         User::where('id', $user->id)
             ->update([
                 'name' => $request->name,
                 'role_id' => $request->role,
                 'password' => Hash::make($request->password)
             ]);
+        if ($request->role == 2) {
+                Guru::create(['user_id' => $user->id]);
+        }
+
         $user_id = User::find($user->id);
         $user_id->role()->sync([$request->role]);
         return redirect()->route('user')->with('status', 'Berhasil mengubah data');

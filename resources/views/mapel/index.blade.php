@@ -16,6 +16,9 @@
         <div class="card mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">DataTables</h6>
+                <h6 class="m-0 font-weight-bold text-primary">
+                    <a href="{{route('mapelguru.index')}}">Mapel Guru</a>
+                </h6>
                                 @can('guru.create')
                 <h6 class="m-0 font-weight-bold text-primary"><a href="#" data-toggle="modal"
                                                                  data-target="#createmodal"><i

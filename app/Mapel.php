@@ -18,4 +18,8 @@ class Mapel extends Model
     {
         return $this->belongsTo('App\Kelas','kelas_id');
     }
+    public function guru()
+    {
+        return $this->belongsToMany('App\Guru');
+    }
 }

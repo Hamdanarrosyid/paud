@@ -22,4 +22,7 @@ class Guru extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+    public function mapels(){
+        return $this->belongsToMany('App\Mapel');
+    }
 }
