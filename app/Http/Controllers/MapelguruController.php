@@ -18,15 +18,6 @@ class MapelguruController extends Controller
         $mapels = Mapel::all();
         $guru = Guru::all();
 
-//        foreach ($guru as $data){
-//            dd(count($data->mapels));
-//            if (empty($data->mapels) == true){
-//                dd('empety');
-//            }
-//            foreach ($data->mapels as $mapel){
-//                dd($mapel);
-//            }
-//        }
         return view('mapel.settingmapel.index', compact('mapels', 'guru'));
     }
 
@@ -51,10 +42,14 @@ class MapelguruController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'guru_id.unique' => 'The guru has already been taken.',
+            'guru_id.required' => 'The guru field is required.',
+        ];
         $this->validate($request, [
             'guru_id' => ['required', 'integer', 'max:255', 'unique:guru_mapel'],
             'mapel' => ['required', 'array'],
-        ]);
+        ],$messages);
         $guru = Guru::find($request->guru_id);
         $guru->mapels()->attach($request->mapel);
         return redirect()->route('mapelguru.index')->with('status', 'Berhasil menambah data');
