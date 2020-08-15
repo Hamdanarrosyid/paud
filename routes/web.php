@@ -31,6 +31,7 @@ Route::resource('tahunajaran','TahunajaranController')->middleware('auth','guru'
 Route::resource('kelas','KelasController')->middleware('auth','guru');
 Route::resource('mapel','MapelController')->middleware('auth','guru');
 Route::resource('mapelguru','MapelguruController')->middleware('auth','guru');
+Route::resource('hari','HariController')->middleware('auth','guru');
 Route::resource('role','RoleController')->middleware('auth','guru');
 
 Route::resource('siswa','SiswaController')->middleware(['auth','guru']);

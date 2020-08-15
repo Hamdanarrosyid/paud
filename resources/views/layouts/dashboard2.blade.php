@@ -185,6 +185,7 @@
                                 <a class="dropdown-item" href="{{route('kelas.index')}}">Kelas</a>
                                 <a class="dropdown-item" href="{{route('tahunajaran.index')}}">Tahun Ajaran</a>
                                 <a class="dropdown-item" href="{{route('sesi.index')}}">Sesi</a>
+                                <a class="dropdown-item" href="{{route('hari.index')}}">Hari</a>
                             </div>
                         </li>
                     @endcan

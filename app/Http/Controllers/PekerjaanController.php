@@ -18,7 +18,7 @@ class PekerjaanController extends Controller
     {
             $Pekerjaan = Pekerjaan::paginate(10);
             return view('settingmaster.pekerjaan', compact('Pekerjaan'));
-        }
+    }
 
     /**
      * Show the form for creating a new resource.
