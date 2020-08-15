@@ -10,4 +10,4 @@ class Hari extends Model
     protected $id = 'id';
     protected $fillable = ['hari'];
 }
-we
+
