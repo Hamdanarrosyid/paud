@@ -101,12 +101,7 @@
                     </div>
                 </div>
             </li>
-            {{--            <li class="nav-item">--}}
-            {{--                <a class="nav-link" href="{{route('jadwal.index')}}">--}}
-            {{--                    <i class="fas fa-fw fa-calendar-day"></i>--}}
-            {{--                    <span>Jadwal</span>--}}
-            {{--                </a>--}}
-            {{--            </li>--}}
+
         @endcan
         @can('guru.viewAny')
             <li class="nav-item">
@@ -116,6 +111,12 @@
                 </a>
             </li>
         @endcan
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('jadwal.index')}}">
+                <i class="fas fa-fw fa-calendar-day"></i>
+                <span>Jadwal</span>
+            </a>
+        </li>
         <hr class="sidebar-divider">
         <div class="version">Paud Version 0.1</div>
     </ul>
@@ -288,10 +289,10 @@
         $('#dataTable').DataTable(); // ID From dataTable
         $('#dataTableHover').DataTable(); // ID From dataTable with Hover
         $('#myMultiple').select2({
-            placeholder:'Select..',
+            placeholder: 'Select..',
         });
         $('.select-single').select2({
-            placeholder:'Select..',
+            placeholder: 'Select..',
         });
     });
     // $('input[name="nohp"]').mask('0000 0000 000000');

@@ -57,10 +57,8 @@
         </div>
     </div>
 
-    <script
-        src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-        crossorigin="anonymous"></script>
+
+    <script src="{{asset('js/jadwal.js')}}"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
@@ -75,7 +73,6 @@
                     dataType: 'json',
                     success: function (data) {
                         var html = '';
-                        console.log(data)
 
                         for (var count = 0; count < data.length; count++) {
                             html += '<tr id="baris">';
@@ -101,7 +98,7 @@
                         html += '<td><button type="button" class="btn btn-success btn-xs " id="add"><i class="fas fa-plus"/></button></td></tr>';
                         html += '</tr>';
 
-                        $('tbody').html(html)
+                        // $('tbody').html(html)
                         $('tbody').on('click', '.column', function () {
                             $(this).data('id', function () {
                                 $('#delete').hide()
