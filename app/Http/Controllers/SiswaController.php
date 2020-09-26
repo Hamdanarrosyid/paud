@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Agama;
 use App\Kelamin;
 use App\Kota;
+use App\Mapel;
 use App\Pekerjaan;
 use App\Siswa;
 use App\Walimurid;
@@ -107,6 +108,37 @@ class SiswaController extends Controller
      */
     public function show(Siswa $siswa)
     {
+        $mapels = Mapel::all();
+
+        return view('siswa.mapel_siswa',compact('siswa','mapels'));
+//        dd($siswa->mapel);
+//        foreach ($mapels as $mapel){
+//            dd($mapel->);
+//        }
+    }
+    public function mapelUpdate(Request $request,Siswa $siswa)
+    {
+        $messages = [
+            'mapel_id.unique' => 'The guru has already been taken.',
+            'mapel_id.required' => 'The guru field is required.',
+        ];
+        $this->validate($request, [
+//            'guru_id' => ['required', 'integer', 'max:255', 'unique:guru_mapel'],
+            'mapel' => [ 'array'],
+        ],$messages);
+        $siswa_id = Siswa::find($siswa->id);
+        $siswa_id->mapel()->sync    ($request->mapel);
+        return redirect()->route('siswa.index')->with('status', 'Berhasil menambah data');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Siswa  $siswa
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     */
+    public function edit(Siswa $siswa)
+    {
         $kota = Kota::all();
         $kelamin = Kelamin::all();
         $agama = Agama::all();
@@ -123,17 +155,6 @@ class SiswaController extends Controller
             'pekerjaan'=>$pekerjaan,
             'data'=>$upper,
             'walimurid'=>$walimurid]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Siswa  $siswa
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Siswa $siswa)
-    {
-        //
     }
 
     /**

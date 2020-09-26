@@ -1,0 +1,44 @@
+.button-wrapper{
+    padding: 20px;
+    display: inline-flex;
+}
+.button-wrapper button{
+    padding: 12px;
+    min-width: 150px;
+    border-radius: 30px;
+    border: 1px solid #439AD4;
+    color: #439AD4;
+    background-color: transparent;
+}
+.button-wrapper button:hover{
+    color: white;
+    background-color: #439AD4;
+}
+.button-wrapper button:focus{
+    outline: none;
+}
+.button-wrapper .button-style{
+    padding: 0;
+}
+.hide{
+    display: none;
+    transition: linear 3s;
+}
+.button-arrow{
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    /*border: 1px solid #439AD4;*/
+    border-radius: 50px;
+    transition: transform .5s;
+    background-color: #439AD4;
+}
+
+.button-arrow-click{
+    transform: rotate(90deg);
+    transition: transform .5s;
+}

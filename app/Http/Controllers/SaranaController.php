@@ -9,10 +9,6 @@ use Illuminate\Validation\ValidationException;
 
 class SaranaController extends Controller
 {
-//    public function __construct()
-//    {
-//        $this->authorizeResource(Sarana::class,'sarpras');
-//    }
 
     /**
      * Display a listing of the resource.

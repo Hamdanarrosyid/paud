@@ -17,6 +17,7 @@
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset('css/simple-calendar.css')}}">
     <link rel="stylesheet" href="{{asset('css/demo.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/main.css')}}">--}}
 </head>
 
 <body id="page-top">
@@ -111,12 +112,12 @@
                 </a>
             </li>
         @endcan
-        <li class="nav-item">
-            <a class="nav-link" href="{{route('jadwal.index')}}">
-                <i class="fas fa-fw fa-calendar-day"></i>
-                <span>Jadwal</span>
-            </a>
-        </li>
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link" href="{{route('jadwal.index')}}">--}}
+{{--                <i class="fas fa-fw fa-calendar-day"></i>--}}
+{{--                <span>Jadwal</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
         <hr class="sidebar-divider">
         <div class="version">Paud Version 0.1</div>
     </ul>
@@ -282,6 +283,7 @@
 <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
 <script src="{{asset('js/jquery.simple-calendar.js')}}"></script>
+{{--<script src="{{asset('js/main.js')}}"></script>--}}
 
 
 <script>

@@ -16,8 +16,8 @@
         <!-- Column -->
         <div class="col-lg-4 col-xlg-3 col-md-5">
             <div class="card">
-                <div class="mt-5 pb-5" style="text-align: center;">
-                    @if(in_array($data,['LAKI-LAKI','COWOK','LAKI LAKI']))
+                <di class="mt-5 pb-5" style="text-align: center;">
+                    @if(in_array($data,['LAKI-LAKI','COWOK','LAKI LAKI','PRIA']))
                         <img src="{{asset('img/child.png')}}" class="img-circle" width="150"/>
                     @elseif($data == '')
                         <p class="text-gray-600">not found</p>
@@ -26,7 +26,7 @@
                     @endif
                     <h4 class="card-title mt-2">{{$guru->nama}}</h4>
                     {{--                        <h6 class="card-subtitle">Siswa paud Tunas Harapan</h6><br>--}}
-                </div>
+                </di>
             </div>
         </div>
         <div class="col-lg-8 col-xlg-9 col-md-7">

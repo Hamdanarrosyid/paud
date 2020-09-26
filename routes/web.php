@@ -34,7 +34,8 @@ Route::resource('mapelguru','MapelguruController')->middleware('auth','guru');
 Route::resource('hari','HariController')->middleware('auth','guru');
 Route::resource('role','RoleController')->middleware('auth','guru');
 
-Route::resource('siswa','SiswaController')->middleware(['auth','guru']);
+Route::resource('siswa','SiswaController')->middleware(['auth','guru'])->except('mapelUpdate');
+Route::patch('siswa/mapel-update/{siswa}','SiswaController@mapelUpdate')->middleware(['auth','guru'])->name('siswa.mapel.update');
 Route::get('siswa.export','SiswaController@exportpdf')->middleware(['auth','guru'])->name('exportpdf');
 Route::get('siswa.html','SiswaController@tes')->middleware(['auth','guru']);
 

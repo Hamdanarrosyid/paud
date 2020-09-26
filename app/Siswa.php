@@ -21,4 +21,7 @@ class Siswa extends Model
     public function agama(){
         return $this->belongsTo('App\Agama','agama_id');
     }
+    public function mapel(){
+        return $this->belongsToMany(Mapel::class);
+    }
 }

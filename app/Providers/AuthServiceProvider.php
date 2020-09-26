@@ -34,7 +34,7 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('admin', 'App\Policies\AdminPolicy@admin');
         Gate::resource('user', 'App\Policies\UsersPolicy');
-        Gate::resource('guru', 'App\Policies\GuruPolicy');
+        Gate::resource('guru', GuruPolicy::class);
         Gate::resource('role', 'App\Policies\RolePolicy');
         Gate::resource('siswa', 'App\Policies\SiswaPolicy');
         Gate::resource('sarpras', 'App\Policies\SarprasPolicy');

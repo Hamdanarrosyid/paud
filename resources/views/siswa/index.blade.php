@@ -42,8 +42,12 @@
                                 {{$data->tempat->kota}} {{$data->tanggal}}
                             </td>
                             <td>{{$data->walimurid->nama}}</td>
-                            <td><a href="{{route('siswa.show',['siswa'=>$data->id])}}"
-                                   class="badge badge-info font-weight-light">Show & Edit</a></td>
+                            <td>
+                                <a href="{{route('siswa.edit',['siswa'=>$data->id])}}"
+                                   class="badge badge-info font-weight-light">Show & Edit</a>
+                                <a href="{{route('siswa.show',['siswa'=>$data->id])}}"
+                                   class="badge badge-success font-weight-light">Mapel</a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>

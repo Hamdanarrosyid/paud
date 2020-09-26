@@ -11,11 +11,6 @@ use Illuminate\Validation\ValidationException;
 
 class MapelController extends Controller
 {
-    public function __construct()
-    {
-        $this->authorizeResource(Guru::class,'guru');
-    }
-
     protected $eror = false;
     /**
      * Display a listing of the resource.
@@ -99,21 +94,13 @@ class MapelController extends Controller
      */
     public function update(Request $request, Mapel $mapel)
     {
-//        $this->authorize('sarpras.update');
-//        try {
             $this->validate($request,[
 //                'kode' => 'required|string|max:10|unique:mapel',
-                'nama' => 'required|integer|max:65',
+                'nama' => 'required|string|max:65',
                 'tahunajaran_id' => 'required|integer',
                 'kelas_id' => 'required|integer',
                 'keterangan' => 'required|string',
             ]);
-//        } catch (ValidationException $e) {
-//            $this->eror = true;
-//            $e = $this->eror;
-////            dd($e);
-//            return redirect()->route('mapel.index',compact('e'));
-//        }
         Mapel::where('id',$mapel->id)
             ->update([
 //                'kode' => $request->kode,

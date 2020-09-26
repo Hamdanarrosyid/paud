@@ -2,7 +2,8 @@
 
 @section('page-title')
     <div class="d-sm-flex align-items-center  border-bottom-success justify-content-between mb-4">
-         <h1 class="h3 text-gray-800"><a href="{{route('siswa.index')}}" class="text-gray-700 mr-4"><i class="fas fa-angle-left"></i></a>Siswa</h1>
+        <h1 class="h3 text-gray-800"><a href="{{route('siswa.index')}}" class="text-gray-700 mr-4"><i
+                    class="fas fa-angle-left"></i></a>Siswa</h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item font-weight-light"><a href="./">Home</a></li>
             <li class="breadcrumb-item font-weight-light" aria-current="page">Dashboard</li>
@@ -11,12 +12,22 @@
     </div>
 @endsection
 @section('content')
-    <div class="row mb-5">
+{{--    <div class="container">--}}
+{{--        <div class="button-wrapper" id="button-profile">--}}
+{{--                <button class="button-style" type="button">Profile data</button>--}}
+{{--                <div id="btn-arrow" class="button-arrow"></div>--}}
+{{--        </div>--}}
+{{--                <div class="button-wrapper">--}}
+{{--                    <button class="button-style" type="button">Mapel data</button>--}}
+{{--                    <div class="button-arrow"></div>--}}
+{{--                </div>--}}
+{{--    </div>--}}
+    <div class="row mb-5" id="form-profile">
         <!-- Column -->
         <div class="col-lg-4 col-xlg-3 col-md-5">
             <div class="card">
                 <div class="mt-5 pb-5" style="text-align: center;">
-                    @if(in_array($data,['LAKI-LAKI','COWOK','LAKI LAKI']))
+                    @if(in_array($data,['LAKI-LAKI','COWOK','LAKI LAKI','PRIA']))
                         <img src="{{asset('img/child.png')}}" class="img-circle" width="150"/>
                     @else
                         <img src="{{asset('img/wedok.png')}}" class="img-circle" width="150"/>
@@ -54,9 +65,10 @@
                                     <select name="tempat" class="form-control">
                                         @foreach($kota as $data)
                                             @if($data->kota== $siswa->tempat->kota)
-                                                <option selected value="{{$siswa->tempat->id}}">{{$siswa->tempat->kota}}</option>
+                                                <option selected
+                                                        value="{{$siswa->tempat->id}}">{{$siswa->tempat->kota}}</option>
                                             @else
-                                            <option value="{{$data->id}}">{{$data->kota}}</option>
+                                                <option value="{{$data->id}}">{{$data->kota}}</option>
                                             @endif
                                         @endforeach
                                     </select>
@@ -76,9 +88,10 @@
                                 <select name="gender" class="form-control">
                                     @foreach($kelamin as $data)
                                         @if($data->jeniskelamin== $siswa->gender->jeniskelamin)
-                                            <option selected value="{{$siswa->gender->id}}">{{$siswa->gender->jeniskelamin}}</option>
+                                            <option selected
+                                                    value="{{$siswa->gender->id}}">{{$siswa->gender->jeniskelamin}}</option>
                                         @else
-                                        <option value="{{$data->id}}">{{$data->jeniskelamin}}</option>
+                                            <option value="{{$data->id}}">{{$data->jeniskelamin}}</option>
                                         @endif
                                     @endforeach
                                 </select>
@@ -90,9 +103,10 @@
                                 <select name="agama" class="form-control">
                                     @foreach($agama as $data)
                                         @if($data->agama== $siswa->agama->agama)
-                                            <option selected value="{{$siswa->agama->id}}">{{$siswa->agama->agama}}</option>
+                                            <option selected
+                                                    value="{{$siswa->agama->id}}">{{$siswa->agama->agama}}</option>
                                         @else
-                                        <option value="{{$data->id}}">{{$data->agama}}</option>
+                                            <option value="{{$data->id}}">{{$data->agama}}</option>
                                         @endif
                                     @endforeach
                                 </select>
@@ -101,22 +115,22 @@
                         <div class="form-group">
                             <div class="col-sm-12">
                                 @can('siswa.update')
-                                <button type="submit" class="btn btn-success">Update Profile</button>
+                                    <button type="submit" class="btn btn-success">Update Profile</button>
                                 @endcan
                                 @can('siswa.delete')
-                                <a href="{{route('siswa.destroy',['siswa'=>$siswa->id])}}"
-                                   onclick="event.preventDefault();document.getElementById('deleteform').submit();"
-                                   class="btn btn-danger">Delete Profile</a>
+                                    <a href="{{route('siswa.destroy',['siswa'=>$siswa->id])}}"
+                                       onclick="event.preventDefault();document.getElementById('deleteform').submit();"
+                                       class="btn btn-danger">Delete Profile</a>
                                 @endcan
                             </div>
                         </div>
                     </form>
                     @can('siswa.delete')
-                    <form id="deleteform" method="POST" action="{{route('siswa.destroy',['siswa'=>$siswa->id])}}">
-                        @csrf
-                        @method('DELETE')
-{{--                        <button type="submit" class="btn btn-danger ">Delete Profile</button>--}}
-                    </form>
+                        <form id="deleteform" method="POST" action="{{route('siswa.destroy',['siswa'=>$siswa->id])}}">
+                            @csrf
+                            @method('DELETE')
+                            {{--                        <button type="submit" class="btn btn-danger ">Delete Profile</button>--}}
+                        </form>
                     @endcan
                 </div>
             </div>
