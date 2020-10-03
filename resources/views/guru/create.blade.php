@@ -1,14 +1,7 @@
 @extends('layouts.dashboard2')
 
-@section('page-title')
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 text-gray-800"><a href="{{route('guru.index')}}" class="text-gray-700 mr-4"><i class="fas fa-angle-left"></i></a>Pendaftaran Guru</h1>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item font-weight-normal"><a href="./">Home</a></li>
-            <li class="breadcrumb-item font-weight-normal" aria-current="page">Dashboard</li>
-            <li class="breadcrumb-item font-weight-normal" aria-current="page">Pendaftaran Guru</li>
-        </ol>
-    </div>
+@section('guru-active')
+    active
 @endsection
 @section('content')
     <div class="card col-lg-6 m-auto">

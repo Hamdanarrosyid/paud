@@ -57,3 +57,6 @@ Route::resource('sarana','SaranaController')->middleware(['auth','guru']);
 Route::resource('prasarana','PrasaranaController')->middleware(['auth','guru']);
 Route::get('datadiri','ProfileController@index')->name('profile.index')->middleware(['auth','notguru']);
 Route::patch('datadiri/{guru}','ProfileController@update')->name('profile.update')->middleware(['auth','notguru']);
+Route::resource('tema','TemaController')->middleware(['auth','guru']);
+Route::resource('subtema','SubTemaController')->middleware(['auth','guru']);
+Route::resource('semester','SemesterController')->middleware(['auth','guru']);

@@ -1,14 +1,10 @@
 @extends('layouts.dashboard2')
 
-@section('page-title')
-    <div class="d-sm-flex align-items-center  border-bottom-danger justify-content-between mb-4">
-        <h1 class="h3 text-gray-800">Sarana</h1>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item font-weight-normal"><a href="./">Home</a></li>
-            <li class="breadcrumb-item font-weight-normal" aria-current="page">Dashboard</li>
-            <li class="breadcrumb-item font-weight-normal" aria-current="page">Sarana</li>
-        </ol>
-    </div>
+@section('sarpras-active')
+    active
+@endsection
+@section('sarpras-show')
+    show
 @endsection
 @section('content')
     <!-- Datatables -->

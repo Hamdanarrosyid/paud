@@ -15,7 +15,7 @@ class KelaminController extends Controller
      */
     public function index()
     {
-        $Kelamin = Kelamin::paginate(10);
+        $Kelamin = Kelamin::paginate(5);
        return view('settingmaster.kelamin',compact('Kelamin'));
     }
 

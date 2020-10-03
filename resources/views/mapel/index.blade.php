@@ -1,14 +1,7 @@
 @extends('layouts.dashboard2')
 
-@section('page-title')
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 text-gray-800">Mapel</h1>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item font-weight-normal"><a href="./">Home</a></li>
-            <li class="breadcrumb-item font-weight-normal" aria-current="page">Dashboard</li>
-            <li class="breadcrumb-item font-weight-normal" aria-current="page">Mapel</li>
-        </ol>
-    </div>
+@section('mapel-active')
+    active
 @endsection
 @section('content')
     <!-- Datatables -->

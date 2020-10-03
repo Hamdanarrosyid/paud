@@ -36,20 +36,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="593c7ba0-e20d-4284-ab00-5843925b0bef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/paud-v0.1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/paud-v0.1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MapelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MapelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SaranaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SaranaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiswaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Siswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Siswa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KelaminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KelaminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/ruang-admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/ruang-admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guru/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guru/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/guru/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mapel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mapel/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/prasarana/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/prasarana/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sarana/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sarana/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/role/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/role/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/role/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/role/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/role/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/role/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/siswa/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/siswa/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/siswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/siswa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/siswa/mapel_siswa.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/siswa/mapel_siswa.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/siswa/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/siswa/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/walimurid/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/walimurid/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/walimurid/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/walimurid/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/walimurid/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/walimurid/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,17 +185,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pembelajaran/semester" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\paud-v0.1\resources\views\pembelajaran\semester" />
+      <recent name="C:\laragon\www\paud-v0.1\resources\views\pembelajaran\subtema" />
+      <recent name="C:\laragon\www\paud-v0.1\public\vendor" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\laragon\www\paud-v0.1\resources\views\settingmaster\role" />
       <recent name="C:\laragon\www\paud-v0.1\resources\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\paud-v0.1\public\vendor" />
     </key>
   </component>
   <component name="RunManager">
@@ -248,6 +261,8 @@
       <workItem from="1597416415478" duration="11494000" />
       <workItem from="1597478786748" duration="16642000" />
       <workItem from="1601098911883" duration="25903000" />
+      <workItem from="1601254417929" duration="123000" />
+      <workItem from="1601711406105" duration="9558000" />
     </task>
     <servers />
   </component>
@@ -271,29 +286,39 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="180" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.768@0.0.1366.768" timestamp="1593802292253" />
-    <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601107084697">
+    <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601715131122">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768/-1366.-66.1366.768@0.0.1366.768" timestamp="1601715131122" />
     <state x="413" y="139" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1601107084697" />
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1597498711197">
+    <state x="352" y="162" key="EditFileWatcherDialog" timestamp="1601728183990">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1597498711197" />
-    <state x="480" y="107" key="NewPhpClassDialog" timestamp="1593025703554">
+    <state x="352" y="162" key="EditFileWatcherDialog/0.0.1366.768/-1366.-66.1366.768@0.0.1366.768" timestamp="1601728183990" />
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1601254543161">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="480" y="107" key="NewPhpClassDialog/0.0.1366.768@0.0.1366.768" timestamp="1593025703554" />
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1601254543161" />
+    <state x="184" y="29" key="SettingsEditor" timestamp="1601728171606">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="29" key="SettingsEditor/0.0.1366.768/-1366.-66.1366.768@0.0.1366.768" timestamp="1601728171606" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1597481756888">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.768@0.0.1366.768" timestamp="1597481756888" />
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2" timestamp="1601713601093">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768/-1366.-66.1366.768@0.0.1366.768" timestamp="1601713601093" />
     <state x="339" y="172" key="run.anything.popup" timestamp="1597482221171">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1597482221171" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1601121924258">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1601732539402">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768/-1366.-66.1366.768@0.0.1366.768" timestamp="1601732539402" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1601121924258" />
   </component>
 </project>

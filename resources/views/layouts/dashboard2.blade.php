@@ -11,41 +11,42 @@
     <title>Paud Tunas Harapan - Dashboard</title>
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('css/ruang-admin.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/ruang-admin.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
     <link href="{{asset('vendor/select2/dist/css/select2.min.css')}}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset('css/simple-calendar.css')}}">
     <link rel="stylesheet" href="{{asset('css/demo.css')}}">
+    <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 {{--    <link rel="stylesheet" href="{{asset('css/main.css')}}">--}}
 </head>
 
 <body id="page-top">
 <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+    <ul class="navbar-nav sidebar-light sidebar accordion" id="accordionSidebar">
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('welcome')}}">
             <div class="sidebar-brand-text mx-3">Paud</div>
         </a>
+        <div class="sidebar-heading m-lg-2">
+            {{__('Menu')}}
+        </div>
         <hr class="sidebar-divider my-0">
-        <li class="nav-item active">
+        <li class="nav-item @yield('dashboard-active')">
             <a class="nav-link" href="{{route('home')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
-        <hr class="sidebar-divider">
-        <div class="sidebar-heading">
-            Features
-        </div>
+{{--        <hr class="sidebar-divider">--}}
         @canany(['user.viewAny','role.viewAny'])
-            <li class="nav-item">
+            <li class="nav-item @yield('pengaturan-user-active')">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage1"
                    aria-expanded="true"
                    aria-controls="collapsePage">
                     <i class="fas fa-fw fa-user-friends"></i>
                     <span>Pengaturan User</span>
                 </a>
-                <div id="collapsePage1" class="collapse" aria-labelledby="headingPage"
+                <div id="collapsePage1" class="collapse @yield('pengaturan-user-show')" aria-labelledby="headingPage"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner">
                         {{--                        <h6 class="collapse-header">Sarpras</h6>--}}
@@ -62,7 +63,7 @@
             </li>
         @endcanany
         @can('siswa.viewAny')
-            <li class="nav-item">
+            <li class="nav-item @yield('siswa-active')">
                 <a class="nav-link" href="{{route('siswa.index')}}">
                     <i class="fas fa-fw fa-child"></i>
                     <span>Siswa</span>
@@ -70,7 +71,7 @@
             </li>
         @endcan
         @can('guru.viewAny')
-            <li class="nav-item">
+            <li class="nav-item @yield('guru-active')">
                 <a class="nav-link" href="{{route('guru.index')}}">
                     <i class="fas fa-fw fa-chalkboard-teacher"></i>
                     <span>Guru</span>
@@ -78,7 +79,7 @@
             </li>
         @endcan
         @can('walimurid.viewAny')
-            <li class="nav-item">
+            <li class="nav-item @yield('wali-active')">
                 <a class="nav-link" href="{{route('walimurid.index')}}">
                     <i class="fas fa-fw fa-user-shield"></i>
                     <span>Orang tua/Wali murid</span>
@@ -86,14 +87,14 @@
             </li>
         @endcan
         @can('sarpras.viewAny')
-            <li class="nav-item">
+            <li class="nav-item @yield('sarpras-active')">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage"
                    aria-expanded="true"
                    aria-controls="collapsePage">
                     <i class="fas fa-fw fa-columns"></i>
                     <span>Sarpras</span>
                 </a>
-                <div id="collapsePage" class="collapse" aria-labelledby="headingPage"
+                <div id="collapsePage" class="collapse @yield('sarpras-show')" aria-labelledby="headingPage"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Sarpras</h6>
@@ -105,13 +106,29 @@
 
         @endcan
         @can('guru.viewAny')
-            <li class="nav-item">
+            <li class="nav-item @yield('mapel-active')">
                 <a class="nav-link" href="{{route('mapel.index')}}">
                     <i class="fas fa-fw fa-sim-card"></i>
                     <span>Mapel</span>
                 </a>
             </li>
         @endcan
+        <li class="nav-item @yield('pembelajaran-active')">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pembelajaran"
+               aria-expanded="true"
+               aria-controls="collapsePage">
+                <i class="fas fa-fw fa-columns"></i>
+                <span>Pembelajaran</span>
+            </a>
+            <div id="pembelajaran" class="collapse" aria-labelledby="headingPage"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Sarpras</h6>
+                    <a class="collapse-item" href="{{route('tema.index')}}">{{__('Tema')}}</a>
+                    <a class="collapse-item" href="{{route('subtema.index')}}">{{__('Sub Tema')}}</a>
+                </div>
+            </div>
+        </li>
 {{--        <li class="nav-item">--}}
 {{--            <a class="nav-link" href="{{route('jadwal.index')}}">--}}
 {{--                <i class="fas fa-fw fa-calendar-day"></i>--}}
@@ -130,29 +147,29 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                           data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                             aria-labelledby="searchDropdown">
-                            <form class="navbar-search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control bg-light border-1 small"
-                                           placeholder="What do you want to look for?"
-                                           aria-label="Search" aria-describedby="basic-addon2"
-                                           style="border-color: #3f51b5;">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="button">
-                                            <i class="fas fa-search fa-sm"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </li>
+{{--                    <li class="nav-item dropdown no-arrow">--}}
+{{--                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"--}}
+{{--                           data-toggle="dropdown"--}}
+{{--                           aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <i class="fas fa-search fa-fw"></i>--}}
+{{--                        </a>--}}
+{{--                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"--}}
+{{--                             aria-labelledby="searchDropdown">--}}
+{{--                            <form class="navbar-search">--}}
+{{--                                <div class="input-group">--}}
+{{--                                    <input type="text" class="form-control bg-light border-1 small"--}}
+{{--                                           placeholder="What do you want to look for?"--}}
+{{--                                           aria-label="Search" aria-describedby="basic-addon2"--}}
+{{--                                           style="border-color: #3f51b5;">--}}
+{{--                                    <div class="input-group-append">--}}
+{{--                                        <button class="btn btn-primary" type="button">--}}
+{{--                                            <i class="fas fa-search fa-sm"></i>--}}
+{{--                                        </button>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </form>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                            data-toggle="dropdown"
@@ -160,15 +177,15 @@
                             <i class="fas fa-bell fa-fw"></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                           data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-envelope fa-fw"></i>
-                        </a>
-                    </li>
+{{--                    <li class="nav-item dropdown no-arrow mx-1">--}}
+{{--                        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"--}}
+{{--                           data-toggle="dropdown"--}}
+{{--                           aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <i class="fas fa-envelope fa-fw"></i>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     @can('admin')
-                        <li class="nav-item dropdown  no-arrow mx-1">
+                        <li class="nav-item dropdown mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
@@ -192,12 +209,12 @@
                         </li>
                     @endcan
                     <div class="topbar-divider d-none d-sm-block"></div>
-                    <li class="nav-item dropdown no-arrow">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user-astronaut"></i>
-                            <span class="ml-2 d-none d-lg-inline text-white small">{{ Auth::user()->name }}</span>
+                            <span class="ml-2 d-none d-lg-inline small">{{ Auth::user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                              aria-labelledby="userDropdown">
@@ -205,7 +222,7 @@
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Profile
                             </a>
-                            <div class="dropdown-divider"></div>
+{{--                            <div class="dropdown-divider"></div>--}}
                             <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal"
                                href="#">
                                 <i class="fas fa-sign-out-alt fa-fw mr-2 text-gray-400"></i>

@@ -1,0 +1,15 @@
+body {
+  background-color: #2E3E4E;
+}
+
+#wrapper .sidebar {
+  background-color: #41586E;
+}
+#wrapper .sidebar .sidebar-brand {
+  background-color: #2E3E4E;
+}
+.navbar {
+  background-color: #41586E;
+}
+
+/*# sourceMappingURL=custom.css.map */
