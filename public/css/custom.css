@@ -8,8 +8,53 @@ body {
 #wrapper .sidebar .sidebar-brand {
   background-color: #2E3E4E;
 }
-.navbar {
+.pagination .page-item .active {
   background-color: #41586E;
+}
+
+.wrapper .button-pill {
+  text-decoration: none;
+  display: inline-block;
+  height: 40px;
+  background-color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  float: left;
+  overflow: hidden;
+  width: 140px;
+  transition: all 0.4s ease-out;
+}
+.wrapper .button-pill .icon {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  background-color: #41586E;
+  text-align: center;
+  line-height: 40px;
+  transition: all 0.4s ease-out;
+}
+.wrapper .button-pill .icon i {
+  color: white;
+  font-size: 18px;
+  transition: all 0.4s ease-out;
+}
+.wrapper .button-pill span {
+  color: #949799;
+  font-size: 16px;
+  transition: all 0.4s ease-out;
+}
+.wrapper .button-pill:hover {
+  background-color: #41586E;
+}
+.wrapper .button-pill:hover .icon {
+  background-color: white;
+}
+.wrapper .button-pill:hover .icon i {
+  color: #41586E;
+}
+.wrapper .button-pill:hover span {
+  color: white;
 }
 
 /*# sourceMappingURL=custom.css.map */

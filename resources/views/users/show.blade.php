@@ -7,7 +7,7 @@
     show
 @endsection
 @section('content')
-    <div class="card col-lg-6 m-auto">
+    <div class="card col-lg-6 mx-auto mb-5">
         <form action="{{route('user.update',['user'=>$user->id])}}" method="post">
             @method('patch')
             @csrf

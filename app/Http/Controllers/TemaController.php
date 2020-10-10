@@ -68,7 +68,7 @@ class TemaController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Tema  $tema
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Tema $tema)
     {

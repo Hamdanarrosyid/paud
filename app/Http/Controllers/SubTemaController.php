@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\SubTema;
+use App\Tema;
 use Illuminate\Http\Request;
 
 class SubTemaController extends Controller
@@ -15,7 +16,8 @@ class SubTemaController extends Controller
     public function index()
     {
         $subtema = SubTema::paginate(10);
-        return view('pembelajaran.subtema.index',compact('subtema'));
+        $tema = Tema::all();
+        return view('pembelajaran.subtema.index',compact('subtema','tema'));
     }
 
     /**
@@ -31,7 +33,7 @@ class SubTemaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
@@ -44,7 +46,7 @@ class SubTemaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SubTema  $subtema
+     * @param \App\SubTema $subtema
      * @return \Illuminate\Http\Response
      */
     public function show(SubTema $subtema)
@@ -55,7 +57,7 @@ class SubTemaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SubTema  $subtema
+     * @param \App\SubTema $subtema
      * @return \Illuminate\Http\Response
      */
     public function edit(SubTema $subtema)
@@ -66,12 +68,13 @@ class SubTemaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SubTema  $subtema
+     * @param \Illuminate\Http\Request $request
+     * @param \App\SubTema $subtema
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, SubTema $subtema)
     {
+        $this->validate($request, ['sub_tema' => 'required|string']);
         SubTema::where('id', $subtema->id)->update(['sub_tema' => $request->sub_tema]);
         return redirect()->route('subtema.index')->with('status', 'Berhasil mengubah data');
     }
@@ -79,7 +82,7 @@ class SubTemaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SubTema  $subtema
+     * @param \App\SubTema $subtema
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(SubTema $subtema)

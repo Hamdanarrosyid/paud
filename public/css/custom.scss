@@ -15,8 +15,52 @@ body {
     }
 
 }
-
-.navbar {
+.pagination .page-item .active{
     background-color: #41586E;
+}
+.wrapper .button-pill{
+    text-decoration: none;
+    display: inline-block;
+    height: 40px;
+    background-color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    width: 140px;
+    transition: all 0.4s ease-out;
+    .icon{
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        border-radius: 50px;
+        background-color: #41586E;
+        text-align: center;
+        line-height: 40px;
+        transition: all 0.4s ease-out;
+        i{
+            color: white;
+            font-size: 18px;
+            transition: all 0.4s ease-out;
+        }
+    }
+    span{
+        color: #949799;
+        font-size: 16px;
+        transition: all 0.4s ease-out;
+    }
+    &:hover {
+        background-color: #41586E;
+        .icon {
+            background-color: white;
+            i {
+                color: #41586E;
+            }
+        }
+        span{
+            color: white;
+        }
+    }
+
 }
 

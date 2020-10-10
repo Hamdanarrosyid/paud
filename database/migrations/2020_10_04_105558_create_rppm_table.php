@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSemester extends Migration
+class CreateRppmTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateSemester extends Migration
      */
     public function up()
     {
-        Schema::create('semester', function (Blueprint $table) {
+        Schema::create('rppm', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('semester');
-            $table->unsignedBigInteger('tahun_id');
-            $table->foreign('tahun_id')->references('id')->on('tahunajaran');
+            $table->unsignedBigInteger('sub_tema_id');
+            $table->foreign('sub_tema_id')->references('id')->on('sub_tema');
+            $table->string('kd');
+            $table->string('muatan_belajar');
+            $table->string('rencana_kegiatan');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class CreateSemester extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('semester');
+        Schema::dropIfExists('rppm');
     }
 }

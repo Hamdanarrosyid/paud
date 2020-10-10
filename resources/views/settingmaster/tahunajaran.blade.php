@@ -15,20 +15,14 @@
     <ul class="list-group m-auto col-lg-10">
         <li class="list-group-item d-flex bg-navbar justify-content-between" aria-disabled="true">
             <div>
-                <span class="text-white">Tahun Ajaran</span>
-                {{--                <span class="mx-5 text-white">|</span>--}}
+                <span class="text-white">Tahun ajaran</span>
             </div>
-            <span class="text-white">Tahun</span>
             <a class="text-white" href="#" data-toggle="modal" data-target="#createmodal">
                 <i class="fas fa-plus"></i>
                 Tambah Data</a>
         </li>
         @foreach($Tahunajaran as $data)
             <li class="list-group-item d-flex justify-content-between">
-                <div>
-                    {{$data->semester}}
-                    {{--                    <span class="mx-5">|</span>--}}
-                </div>
                 {{$data->tahun}}
                 <div>
                     <a href="#" type="button" class="btn badge badge-success " data-toggle="modal"
@@ -75,13 +69,7 @@
                         @csrf
                         @method('POST')
                         <div class="form-group row">
-                            <label for="semester" class="col-sm-4 col-form-label">Semester</label>
-                            <div class="col-sm-8">
-                                <input type="text" name="semester" class="form-control" id="semester">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="tahun" class="col-sm-4 col-form-label">Tahun</label>
+                            <label for="tahun" class="col-sm-4 col-form-label">Tahun ajaran</label>
                             <div class="col-sm-8">
                                 <input type="text" name="tahun" class="form-control" id="tahun">
                             </div>
@@ -113,14 +101,7 @@
                             @csrf
                             @method('PATCH')
                             <div class="form-group row">
-                                <label for="semester" class="col-sm-4 col-form-label">Semester</label>
-                                <div class="col-sm-8">
-                                    <input type="text" value="{{$data->semester}}" name="semester" class="form-control"
-                                           id="semester">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="tahun" class="col-sm-4 col-form-label">Tahun</label>
+                                <label for="tahun" class="col-sm-4 col-form-label">Tahun ajaran</label>
                                 <div class="col-sm-8">
                                     <input type="text" value="{{$data->tahun}}" name="tahun"
                                            class="form-control" id="tahun">

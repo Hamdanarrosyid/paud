@@ -36,7 +36,7 @@ class TahunajaranController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, ['semester' => 'required|string', 'tahun' => 'required|string']);
+        $this->validate($request, ['tahun' => 'required|string']);
         Tahunajaran::Create($request->all());
         return redirect()->route('tahunajaran.index')->with('status', 'Berhasil menambahkan data');
     }
@@ -72,7 +72,7 @@ class TahunajaranController extends Controller
      */
     public function update(Request $request, Tahunajaran $tahunajaran)
     {
-        Tahunajaran::where('id', $tahunajaran->id)->update(['semester' => $request->semester, 'tahun' => $request->tahun]);
+        Tahunajaran::where('id', $tahunajaran->id)->update(['tahun' => $request->tahun]);
         return redirect()->route('tahunajaran.index')->with('status', 'Berhasil mengubah data');
     }
 

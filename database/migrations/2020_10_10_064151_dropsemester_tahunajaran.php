@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubTema extends Migration
+class DropsemesterTahunajaran extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateSubTema extends Migration
      */
     public function up()
     {
-        Schema::create('sub_tema', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('sub_tema');
-            $table->timestamps();
+        Schema::table('tahunajaran',function (Blueprint $table){
+            $table->dropColumn('semester');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateSubTema extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sub_tema');
+        Schema::table('tahunajaran',function (Blueprint $table){
+            $table->string('semester')->after('tahun');
+        });
     }
 }

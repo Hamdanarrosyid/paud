@@ -8,5 +8,5 @@ class Tahunajaran extends Model
 {
     protected $table = 'tahunajaran';
     protected $id = 'id';
-    protected $fillable = ['tahun','semester'];
+    protected $fillable = ['tahun'];
 }

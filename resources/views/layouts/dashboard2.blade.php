@@ -97,7 +97,7 @@
                 <div id="collapsePage" class="collapse @yield('sarpras-show')" aria-labelledby="headingPage"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Sarpras</h6>
+{{--                        <h6 class="collapse-header">Sarpras</h6>--}}
                         <a class="collapse-item" href="{{route('sarana.index')}}">Sarana</a>
                         <a class="collapse-item" href="{{route('prasarana.index')}}">Prasarana</a>
                     </div>
@@ -120,12 +120,15 @@
                 <i class="fas fa-fw fa-columns"></i>
                 <span>Pembelajaran</span>
             </a>
-            <div id="pembelajaran" class="collapse" aria-labelledby="headingPage"
+            <div id="pembelajaran" class="collapse @yield('pembelajaran-show')" aria-labelledby="headingPage"
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Sarpras</h6>
+{{--                    <h6 class="collapse-header">Pembelajaran</h6>--}}
                     <a class="collapse-item" href="{{route('tema.index')}}">{{__('Tema')}}</a>
                     <a class="collapse-item" href="{{route('subtema.index')}}">{{__('Sub Tema')}}</a>
+                    <a class="collapse-item" href="{{route('semester.index')}}">{{__('Semester')}}</a>
+                    <a class="collapse-item" href="{{route('program-semester.index')}}">{{__('Program Semester')}}</a>
+                    <a class="collapse-item" href="{{route('rppm.index')}}">{{__('RPPM')}}</a>
                 </div>
             </div>
         </li>
@@ -136,11 +139,11 @@
 {{--            </a>--}}
 {{--        </li>--}}
         <hr class="sidebar-divider">
-        <div class="version">Paud Version 0.1</div>
+        <div class="version">Paud 1.0</div>
     </ul>
     <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
-        <div id="content">
+        <div id="content" class="bg-blue">
             <!-- TopBar -->
             <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
                 <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
@@ -246,7 +249,7 @@
             <!---Container Fluid-->
         </div>
         <!-- Footer -->
-        <footer class="sticky-footer bg-white mt-5">
+        <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
             <span>copyright &copy; 2019 - developed by
@@ -308,6 +311,12 @@
         $('#dataTable').DataTable(); // ID From dataTable
         $('#dataTableHover').DataTable(); // ID From dataTable with Hover
         $('#myMultiple').select2({
+            placeholder: 'Select..',
+        });
+        $('#sub_tema_select').select2({
+            placeholder: 'Select..',
+        });
+        $('#kd_select').select2({
             placeholder: 'Select..',
         });
         $('.select-single').select2({
