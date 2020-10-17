@@ -10,7 +10,7 @@
     <div class="container d-flex justify-content-end">
         {{--        <input type="text" class="rounded-pill px-2 w-25 border-0" placeholder="search">--}}
         <div class="wrapper">
-            <a href="#" class="button-pill" data-toggle="modal" data-target="#createmodal">
+            <a href="{{route('rppm.create')}}" class="button-pill">
                 <div class="icon"><i class="fas fa-plus"></i></div>
                 <span>Tambah data</span>
             </a>
@@ -30,12 +30,8 @@
                 {{--                <td>{{$loop->iteration}}</td>--}}
                 <td>{{$data->subTema->sub_tema}}</td>
                 <td>{{$data->kd}}</td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque deserunt dolorum eaque expedita
-                    illum impedit, inventore perferendis quos tempora vitae.
-                </td>
-                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias consectetur dolor eaque
-                    eveniet labore rem soluta? Dolore eaque eligendi mollitia temporibus veniam!
-                </td>
+                <td>{{$data->muatan_belajar}}</td>
+                <td>{{$data->rencana_kegiatan}}</td>
                 <td>
                     <a href="#" type="button" class="btn badge badge-success " data-toggle="modal"
                        data-target="#editmodal-{{$data->id}}">Edit</a>

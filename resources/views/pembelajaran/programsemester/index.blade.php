@@ -9,16 +9,30 @@
 @section('content')
     <div class="d-flex justify-content-between">
         {{--        <input type="text" class="rounded-pill px-2 w-25 border-0" placeholder="search">--}}
-        <div class="input-group row">
-            <div class="col-lg-6 col-sm-2">
+        <form action="{{route('program-semester.filter')}}" method="GET">
+            <div class="input-group">
                 <select name="filter" class="custom-select" id="filter">
-                    <option value="">{{__('Filter...')}}</option>
+{{--                    <option value="">{{__('Filter...')}}</option>--}}
                     @foreach($semester as $data)
-                        <option value="{{$data->id}}">{{$data->tahunAjaran->tahun}} {{$data->semester}}</option>
+                        <option
+                            @if($filter != null && $filter == $data->id)
+                                selected
+                            @endif
+                            value="{{$data->id}}">{{$data->tahunAjaran->tahun}} {{$data->semester}}
+                        </option>
                     @endforeach
                 </select>
+{{--                @error('filter')--}}
+{{--                <span class="invalid-feedback" role="alert">--}}
+{{--                            <strong>{{ $message }}</strong>--}}
+{{--                        </span>--}}
+{{--                @enderror--}}
+                <div class="input-group-append">
+                    <button type="submit" class="btn-dark btn input-group-text">Filter</button>
+                </div>
+                <a href="{{route('program-semester.index')}}" class="btn ml-lg-2 btn-success">All</a>
             </div>
-        </div>
+        </form>
         <div class="wrapper">
             <a href="{{route('program-semester.create')}}" class="button-pill">
                 <div class="icon"><i class="fas fa-plus"></i></div>
@@ -28,7 +42,7 @@
     </div>
     <table class="table col-lg-12 mt-2 px-0 bg-white">
         <tr>
-            {{--            <th>No</th>--}}
+            <th>Tahun Ajaran</th>
             <th>Tema</th>
             <th>Sub Tema</th>
             <th>KD</th>
@@ -37,7 +51,7 @@
         </tr>
         @foreach($datas as $data)
             <tr>
-                {{--                <td>{{$loop->iteration}}</td>--}}
+                <td>{{$data->semester->tahunAjaran->tahun}} {{$data->semester->semester}}</td>
                 <td>{{$data->tema->tema}}</td>
                 <td>
                     <ul class="list-group">
@@ -55,9 +69,10 @@
                 </td>
                 <td>{{$data->bulan->bulan}}</td>
                 <td>
-                    <a href="#" type="button" class="btn badge badge-success " data-toggle="modal"
-                       data-target="#editmodal-{{$data->id}}">Edit</a>
-                    <form action="{{route('rppm.destroy',['rppm'=>$data->id])}}" method="post" class="d-inline">
+                    <a href="{{route('program-semester.edit',['program_semester'=>$data->id])}}" type="button"
+                       class="btn badge badge-success ">Edit</a>
+                    <form action="{{route('program-semester.destroy',['program_semester'=>$data->id])}}" method="post"
+                          class="d-inline">
                         @method('delete')
                         @csrf
                         <button type="submit" class="btn badge badge-danger " style="cursor: pointer">Hapus</button>
@@ -82,6 +97,6 @@
             </button>
         </div>
     @endif
-    {{$datas->links()}}
+    {{$datas->appends(['filter' => $filter])->links()}}
 
 @endsection

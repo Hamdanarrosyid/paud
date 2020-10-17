@@ -60,5 +60,7 @@ Route::patch('datadiri/{guru}','ProfileController@update')->name('profile.update
 Route::resource('tema','TemaController')->middleware(['auth','guru']);
 Route::resource('subtema','SubTemaController')->middleware(['auth','guru']);
 Route::resource('semester','SemesterController')->middleware(['auth','guru']);
+Route::resource('kd','KompetensiDasarController')->middleware(['auth','guru']);
 Route::resource('rppm','RppmController')->middleware(['auth','guru']);
 Route::resource('program-semester','ProgramSemesterController')->middleware(['auth','guru']);
+Route::get('program-semester-filter','ProgramSemesterController@filter')->middleware(['auth','guru'])->name('program-semester.filter');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\KompetensiDasar;
 use App\Rppm;
 use App\SubTema;
 use App\Tema;
@@ -24,11 +25,14 @@ class RppmController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function create()
     {
-        //
+        $tema = Tema::all();
+        $subtema = SubTema::all();
+        $kd = KompetensiDasar::all();
+        return view('pembelajaran.rppm.create',compact('kd','subtema','tema'));
     }
 
     /**

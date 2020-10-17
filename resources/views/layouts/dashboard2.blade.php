@@ -127,6 +127,7 @@
                     <a class="collapse-item" href="{{route('tema.index')}}">{{__('Tema')}}</a>
                     <a class="collapse-item" href="{{route('subtema.index')}}">{{__('Sub Tema')}}</a>
                     <a class="collapse-item" href="{{route('semester.index')}}">{{__('Semester')}}</a>
+                    <a class="collapse-item" href="{{route('kd.index')}}">{{__('Kompetensi Dasar')}}</a>
                     <a class="collapse-item" href="{{route('program-semester.index')}}">{{__('Program Semester')}}</a>
                     <a class="collapse-item" href="{{route('rppm.index')}}">{{__('RPPM')}}</a>
                 </div>
@@ -296,7 +297,8 @@
 <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 <script src="{{asset('vendor/select2/dist/js/select2.min.js')}}"></script>
-<script src="{{asset('js/ruang-admin.min.js')}}"></script>
+<script src="{{asset('js/ruang-admin.js')}}"></script>
+<script src="{{asset('js/main.js')}}"></script>
 {{--<script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>--}}
 {{--<script src="{{asset('js/demo/chart-area-demo.js')}}"></script>--}}
 <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
@@ -324,10 +326,10 @@
         });
     });
     // $('input[name="nohp"]').mask('0000 0000 000000');
-    var cleave = new Cleave('.input-element', {
-        phone: true,
-        phoneRegionCode: "ID"
-    });
+    // var cleave = new Cleave('.input-element', {
+    //     phone: true,
+    //     phoneRegionCode: "ID"
+    // });
 </script>
 
 </body>
