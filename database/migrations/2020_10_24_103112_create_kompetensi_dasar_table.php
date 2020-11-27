@@ -15,7 +15,10 @@ class CreateKompetensiDasarTable extends Migration
     {
         Schema::create('kompetensi_dasar', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('kode');
             $table->string('kompetensi_dasar');
+//            $table->unsignedBigInteger('sub_tema_id');
+//            $table->foreign('sub_tema_id')->references('id')->on('sub_tema');
             $table->timestamps();
         });
     }

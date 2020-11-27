@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubTemaTema extends Migration
+class CreateSubTema extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,8 @@ class CreateSubTemaTema extends Migration
     {
         Schema::create('sub_tema', function (Blueprint $table) {
             $table->bigIncrements('id');
+//            $table->unsignedBigInteger('tema_id');
+            $table->foreign('tema_id')->references('id')->on('tema');
             $table->string('sub_tema');
             $table->timestamps();
         });

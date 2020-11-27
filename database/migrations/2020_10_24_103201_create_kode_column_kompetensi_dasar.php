@@ -13,9 +13,9 @@ class CreateKodeColumnKompetensiDasar extends Migration
      */
     public function up()
     {
-        Schema::table('kompetensi_dasar', function (Blueprint $table) {
-            $table->string('kode')->after('id');
-        });
+//        Schema::table('kompetensi_dasar', function (Blueprint $table) {
+//            $table->string('kode')->after('id');
+//        });
     }
 
     /**
@@ -25,12 +25,12 @@ class CreateKodeColumnKompetensiDasar extends Migration
      */
     public function down()
     {
-        if (Schema::hasColumn('kompetensi_dasar', 'kode'))
-        {
-            Schema::table('kompetensi_dasar', function (Blueprint $table)
-            {
-                $table->dropColumn('kode');
-            });
-        }
+//        if (Schema::hasColumn('kompetensi_dasar', 'kode'))
+//        {
+//            Schema::table('kompetensi_dasar', function (Blueprint $table)
+//            {
+//                $table->dropColumn('kode');
+//            });
+//        }
     }
 }

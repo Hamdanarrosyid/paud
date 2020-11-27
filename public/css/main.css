@@ -42,3 +42,6 @@
     transform: rotate(90deg);
     transition: transform .5s;
 }
+textarea.normal-height{
+    height: 43px;
+}

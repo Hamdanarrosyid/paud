@@ -29,7 +29,7 @@
             <tr>
                 {{--                <td>{{$loop->iteration}}</td>--}}
                 <td>{{$data->subTema->sub_tema}}</td>
-                <td>{{$data->kd}}</td>
+                <td>{{$data->kd->kompetensi_dasar}}</td>
                 <td>{{$data->muatan_belajar}}</td>
                 <td>{{$data->rencana_kegiatan}}</td>
                 <td>

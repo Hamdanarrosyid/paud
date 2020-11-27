@@ -15,11 +15,10 @@ class CreateRppmTable extends Migration
     {
         Schema::create('rppm', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('sub_tema_id');
-            $table->foreign('sub_tema_id')->references('id')->on('sub_tema');
-            $table->string('kd');
-            $table->string('muatan_belajar');
-            $table->string('rencana_kegiatan');
+            $table->unsignedBigInteger('kompetensi_dasar_id');
+            $table->foreign('kompetensi_dasar_id')->references('id')->on('kompetensi_dasar');
+            $table->text('muatan_belajar');
+            $table->text('rencana_kegiatan');
             $table->timestamps();
         });
     }

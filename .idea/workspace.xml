@@ -36,18 +36,181 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="593c7ba0-e20d-4284-ab00-5843925b0bef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/pembelajaran/rppm/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Agama.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Agama.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Bulan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Bulan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Guru.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Guru.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Hari.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Hari.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AgamaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AgamaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ConfirmPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/VerificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BulanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BulanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ExportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ExportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GuruController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GuruController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HariController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HariController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JadwalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JadwalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KelaminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KelaminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KelasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KelasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KompetensiDasarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KompetensiDasarController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KotaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KotaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MapelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MapelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MapelguruController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MapelguruController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PekerjaanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PekerjaanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PendidikanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PendidikanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PrasaranaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PrasaranaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProgramSemesterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProgramSemesterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RppmController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RppmController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SaranaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SaranaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SemesterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SemesterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SesiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SesiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SiswaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SiswaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubTemaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubTemaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TahunajaranController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TahunajaranController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TemaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TemaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WalimuridController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WalimuridController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckForMaintenanceMode.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckGuru.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckGuru.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/EncryptCookies.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/NotGuru.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/NotGuru.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/TrimStrings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/TrustProxies.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jadwal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jadwal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Kelamin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Kelamin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Kelas.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Kelas.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/KompetensiDasar.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/KompetensiDasar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Kota.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Kota.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mapel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mapel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Pekerjaan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pekerjaan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Pendidikan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pendidikan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Permissions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Permissions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/AdminPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/AdminPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/GuruPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/GuruPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/RolePolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/RolePolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/SarprasPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/SarprasPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/SiswaPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/SiswaPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/UsersPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/UsersPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/WalimuridPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/WalimuridPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Prasarana.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Prasarana.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ProgramSemester.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ProgramSemester.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/BroadcastServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rppm.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rppm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Sarana.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Sarana.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Semester.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Semester.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Sesi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Sesi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Siswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Siswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/SubTema.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/SubTema.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tahunajaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tahunajaran.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Tema.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tema.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Walimurid.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Walimurid.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_045210_create_jenis_kelamin_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_045210_create_jenis_kelamin_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_045519_create_agama_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_045519_create_agama_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_045556_create_kota_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_045556_create_kota_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_045827_create_pendidikan_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_045827_create_pendidikan_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_08_045844_create_pekerjaan_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_08_045844_create_pekerjaan_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_09_082407_create_walimurid_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_09_082407_create_walimurid_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_09_082408_create_siswa_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_09_082408_create_siswa_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_11_054607_create_guru_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_11_054607_create_guru_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_11_071719_create_sarana_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_11_071719_create_sarana_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_02_11_071811_create_prasarana_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_02_11_071811_create_prasarana_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_24_172643_create_role_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_24_172643_create_role_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_03_181910_create_jadwal_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_03_181910_create_jadwal_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_04_162536_create_permissions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_04_162536_create_permissions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_11_063957_create_tahunajaran_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_11_063957_create_tahunajaran_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_11_064030_create_table_kelas.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_11_064030_create_table_kelas.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_11_064238_create_mapel_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_11_064238_create_mapel_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_24_172428_add_role_column.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_24_172428_add_role_column.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_14_203820_create_sesi_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_14_203820_create_sesi_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_15_112053_create_guru_mapel_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_15_112053_create_guru_mapel_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_15_120819_create_hari_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_15_120819_create_hari_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_26_061919_create_mapel_siswa.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_26_061919_create_mapel_siswa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_03_075239_create_table_tema.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_03_081751_create_semester.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_04_103012_create_sub_tema_tema.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_04_105558_create_rppm_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_064151_dropsemester_tahunajaran.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_065359_create_bulan_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_065443_create_kompetensi_dasar_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_074910_create_program_semester.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_110024_create_tema_sub_tema_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_10_110118_create_tema_kompetensi_dasar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_17_064201_create_kode_column_kompetensi_dasar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/ruang_admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/ruang_admin.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/ruang-admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ruang-admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/ruang-admin.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ruang-admin.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guru/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guru/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/guru/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/guru/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/html.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/html.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/jadwal/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/jadwal/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mapel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mapel/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mapel/settingmapel/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mapel/settingmapel/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mapel/settingmapel/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mapel/settingmapel/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/mapel/settingmapel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/mapel/settingmapel/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pembelajaran/kd/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pembelajaran/kd/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pembelajaran/programsemester/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pembelajaran/programsemester/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pembelajaran/programsemester/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pembelajaran/programsemester/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pembelajaran/programsemester/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pembelajaran/programsemester/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pembelajaran/rppm/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pembelajaran/rppm/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pembelajaran/rppm/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pembelajaran/rppm/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pembelajaran/semester/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pembelajaran/semester/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pembelajaran/subtema/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pembelajaran/subtema/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pembelajaran/tema/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pembelajaran/tema/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/prasarana/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/prasarana/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sarana/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sarana/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/agama.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/agama.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/hari.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/hari.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/kelamin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/kelamin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/kelas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/kelas.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/kota.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/kota.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/pekerjaan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/pekerjaan.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/pendidikan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/pendidikan.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/role/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/role/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/role/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/role/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/role/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/role/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/sesi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/sesi.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/settingmaster/tahunajaran.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/settingmaster/tahunajaran.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/siswa/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/siswa/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/siswa/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/siswa/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/siswa/mapel_siswa.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/siswa/mapel_siswa.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/siswa/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/siswa/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/walimurid/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/walimurid/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/walimurid/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/walimurid/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/walimurid/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/walimurid/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +337,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Data_savior" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -257,6 +420,11 @@
       <workItem from="1602473255483" duration="3530000" />
       <workItem from="1602524282154" duration="8655000" />
       <workItem from="1602915875566" duration="15900000" />
+      <workItem from="1603073346160" duration="804000" />
+      <workItem from="1603517464769" duration="25643000" />
+      <workItem from="1604093292737" duration="6250000" />
+      <workItem from="1604127059068" duration="18698000" />
+      <workItem from="1604883784382" duration="257000" />
     </task>
     <servers />
   </component>
@@ -286,10 +454,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="352" y="162" key="EditFileWatcherDialog/0.0.1366.768/-1366.-66.1366.768@0.0.1366.768" timestamp="1601728183990" />
-    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1601254543161">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1604884063589">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1601254543161" />
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1604884063589" />
     <state x="184" y="29" key="SettingsEditor" timestamp="1601728171606">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -303,17 +471,27 @@
     </state>
     <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768/-1366.-66.1366.768@0.0.1366.768" timestamp="1601713601093" />
     <state x="275" y="117" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1601796282005" />
-    <state x="339" y="172" key="run.anything.popup" timestamp="1602922101997">
+    <state x="339" y="172" key="run.anything.popup" timestamp="1604096102037">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="339" y="172" key="run.anything.popup/0.0.1366.768/-1024.0.1024.768@0.0.1366.768" timestamp="1602922101997" />
-    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1597482221171" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1602932576386">
+    <state x="339" y="172" key="run.anything.popup/0.0.1366.768/-1024.0.1024.768@0.0.1366.768" timestamp="1604096102037" />
+    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1603519730960" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1604143598418">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="346" y="86" width="672" height="652" key="search.everywhere.popup/0.0.1366.738/-1024.0.1024.738@0.0.1366.738" timestamp="1602332846387" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768/-1024.0.1024.768@0.0.1366.768" timestamp="1602932576386" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768/-1024.0.1024.768@0.0.1366.768" timestamp="1604098804798" />
     <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768/-1366.-66.1366.768@0.0.1366.768" timestamp="1601732539402" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1602917338538" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1604143598418" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/pembelajaran/rppm/index.blade.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

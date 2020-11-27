@@ -27,17 +27,17 @@
     {{--        </div>--}}
     {{--    </div>--}}
 
-    <div>
+    <div class="card">
         <div class="card-header bg-transparent text-center">
             <h3 class="card-title">{{__('Rencana Pembelajaran Per Minggu')}}</h3>
         </div>
         <div class="card-body">
             <form action="{{route('rppm.store')}}" method="post">
                 @csrf
-                <div class="row justify-content-center">
-                    <div class="form-group col-lg-5">
-                        <label for="inputTema" class="col-form-label">Tema</label>
-                        <select required name="tema_id" id="inputTema"
+                <div class="row">
+                    <div class="form-group col-lg-6">
+                        <label for="selectInputTema" class="col-form-label">Tema</label>
+                        <select required name="tema_id" id="selectInputTema"
                                 class="form-control @error('tema_id') is-invalid @enderror">
                             <option>{{__('Select...')}}</option>
                             @foreach($tema as $data)
@@ -55,22 +55,23 @@
                         </span>
                         @enderror
                     </div>
-                    <div class="form-group col-lg-5">
-                        <label class="col-form-label" for="sub_tema">Sub Tema</label>
-                        <select required name="sub_tema_id" id="sub_tema"
+                    <div class="form-group col-lg-6">
+                        <label class="col-form-label" for="selectInputSubTema">Sub Tema</label>
+                        <select required name="sub_tema_id" id="selectInputSubTema"
                                 class="form-control @error('sub_tema_id') is-invalid @enderror">
-                            @foreach($subtema as $data)
-                                <option
-                                    @if(old('sub_tema_id') != null)
-                                    @foreach(old('sub_tema_id') as $old)
-                                    @if($old == $data->id)
-                                    selected
-                                    @endif
-                                    @endforeach
-                                    @endif
-                                    value="{{$data->id}}">{{$data->sub_tema}}
-                                </option>
-                            @endforeach
+                            <option>tidak ada sub tema</option>
+{{--                            @foreach($subtema as $data)--}}
+{{--                                <option--}}
+{{--                                    @if(old('sub_tema_id') != null)--}}
+{{--                                    @foreach(old('sub_tema_id') as $old)--}}
+{{--                                    @if($old == $data->id)--}}
+{{--                                    selected--}}
+{{--                                    @endif--}}
+{{--                                    @endforeach--}}
+{{--                                    @endif--}}
+{{--                                    value="{{$data->id}}">{{$data->sub_tema}}--}}
+{{--                                </option>--}}
+{{--                            @endforeach--}}
                         </select>
                         @error('sub_tema_id')
                         <span class="invalid-feedback text-center" role="alert">
@@ -79,24 +80,24 @@
                         @enderror
                     </div>
                 </div>
-                <hr>
                 <div class="row">
                     <div class="form-group col-lg-3">
                         <label class="col-form-label" for="kd_select_input">KD</label>
                         <select required name="kompetensi_dasar_id" id="kd_select_input"
                                 class="form-control @error('kompetensi_dasar_id') is-invalid @enderror">
-                            @foreach($kd as $data)
-                                <option
-                                    @if(old('kompetensi_dasar_id') != null)
-                                    @foreach(old('kompetensi_dasar_id') as $old)
-                                    @if($old == $data->id)
-                                    selected
-                                    @endif
-                                    @endforeach
-                                    @endif
-                                    value="{{$data->id}}">{{$data->kompetensi_dasar}}
-                                </option>
-                            @endforeach
+                            <option>tidak ada kompetensi dasar</option>
+{{--                            @foreach($kd as $data)--}}
+{{--                                <option--}}
+{{--                                    @if(old('kompetensi_dasar_id') != null)--}}
+{{--                                    @foreach(old('kompetensi_dasar_id') as $old)--}}
+{{--                                    @if($old == $data->id)--}}
+{{--                                    selected--}}
+{{--                                    @endif--}}
+{{--                                    @endforeach--}}
+{{--                                    @endif--}}
+{{--                                    value="{{$data->id}}">{{$data->kompetensi_dasar}}--}}
+{{--                                </option>--}}
+{{--                            @endforeach--}}
                         </select>
                         @error('kompetensi_dasar_id')
                         <span class="invalid-feedback text-center" role="alert">
